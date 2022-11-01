@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -8,6 +10,10 @@ module.exports = {
     extend: {
       colors: {
         bronze: "#88715B",
+      },
+      fontFamily: {
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+        serif: ["Zilla Slab", ...defaultTheme.fontFamily.serif],
       },
     },
   },

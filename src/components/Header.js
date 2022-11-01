@@ -12,7 +12,10 @@ const titles = ["Inicio", "Sobre mí", "Resumen", "Proyectos", "Contacto"]
 
 const Header = () => {
   return (
-    <div id="header" className="fixed top-0 left-0 right-0 z-10 bg-black">
+    <div
+      id="header"
+      className="fixed top-0 left-0 right-0 z-10  border-b-bronze bg-black  shadow-md shadow-bronze"
+    >
       <div className="flex flex-row justify-between px-5 py-7 text-bronze">
         <div>
           <strong>Manuel Sánchez</strong>
