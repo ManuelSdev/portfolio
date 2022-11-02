@@ -6,49 +6,90 @@ import background from "../images/me.jpg"
 
 const Test = () => {
   const [hh, sethh] = React.useState(20)
+  const [layoutWidth, setLayoutWidth] = React.useState(0)
 
   React.useEffect(() => {
     const headerElem = document.querySelector("#header")
     headerElem && console.log("headerElem", headerElem)
     headerElem && sethh(headerElem.offsetHeight)
+    const layoutWidth = document.querySelector("#layout").offsetWidth
+    setLayoutWidth(layoutWidth)
   }, [])
 
+  const percentage = (total, partial) => (partial * total) / 100
   return (
     <Layout>
-      <div className="absolute left-0 right-0 " style={{ top: `${hh}px` }}>
-        <div className="absolute right-24  flex w-full flex-row ">
+      <div
+        className="absolute left-0 right-0 h-full"
+        style={{
+          top: `${hh}px`,
+        }}
+      >
+        <div
+          id="layout"
+          className="absolute right-24 left-0 flex  flex-row "
+          //  style={{ maxWidth: "100%" }}
+        >
           <div
-            className="fixed left-0 flex h-screen bg-bronze"
-            //  className=" h-full bg-bronze"
+            // className="fixed left-0 flex h-screen bg-bronze"
+            className="fixed left-0 h-full bg-bronze"
             style={{
-              // width: "30",
-              //     backgroundColor: "#68e0cf",
-              flexGrow: 1,
+              width: "808.35px",
+              //
+              //  width: "calc(45% - 48px)",
+              /*
+              width: `${percentage(
+                document.querySelector("#layout").offsetWidth,
+                45
+              )}px`,
+*/
+              /*() => {
+                return calc(
+                  `${document.querySelector("#test").offsetWidth}px -55%`
+                )
+              },
+              */
+              //top: `-${hh}px`,
+              //backgroundColor: "#68e0cf",
+              // flexBasis: "45%",
+              //      minWidth: "740px",
+              // flexGrow: 1,
               backgroundSize: "cover",
               backgroundPosition: "top center",
             }}
           >
             <div
-              className="h-screen"
+              className=" h-screen  bg-bronze"
               style={{
+                //  flexBasis: "45%",
+                //   flexGrow: 1,
+                //flexShrink: 0,
+                //  width: "740px",
                 backgroundImage: `url(${background})`,
                 backgroundSize: "cover",
                 backgroundPosition: "top center",
                 mixBlendMode: "luminosity",
-                //   backgroundRepeat: "no-repeat",
+                boxSizing: "content-box",
+                backgroundRepeat: "no-repeat",
               }}
             ></div>
           </div>
+
           <div
             //   className="absolute right-24 border-r border-r-bronze bg-black"
-            className="flex border-r border-r-bronze bg-black"
+            className="absolute right-0 border-r border-r-bronze bg-black"
             style={{
-              flexGrow: 2,
-              widht: "45%",
-              top: `${hh}px`,
+              // flexBasis: "55%",
+              //    flexShrink: 2,
+              // flexGrow: 1,
+              // ,
+              top: `-${hh}px`,
+              width: "55%",
             }}
           >
-            <div className="overflow-y-auto px-5">
+            <div
+            //  className="overflow-y-auto px-5"
+            >
               <MainSection />
               <div className="h-40 bg-slate-400">COL 1</div>
               <div className="h-40 bg-slate-400">COL 2</div>
