@@ -6,6 +6,15 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg/,
+        },
+      },
+    },
+
     `gatsby-plugin-sass`,
     "gatsby-plugin-postcss",
     `gatsby-plugin-image`,
