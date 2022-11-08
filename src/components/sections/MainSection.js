@@ -21,7 +21,7 @@ const Typing = () => {
 
 const MainSection = () => {
   return (
-    <div className="flex  h-screen flex-col justify-center py-5 font-sans">
+    <div className="flex  h-screen flex-col justify-center  py-5 font-sans">
       <div className="-ml-48 rounded-l-full bg-black p-20 font-serif text-8xl text-bronze">
         <div>Manuel</div>
         <div>Sánchez</div>

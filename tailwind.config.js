@@ -15,6 +15,13 @@ module.exports = {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
         serif: ["Zilla Slab", ...defaultTheme.fontFamily.serif],
       },
+      content: {
+        linkIcon: "url(/src/assets/svg/link.svg)",
+        a: "url(/link.svg)",
+      },
+      backgroundImage: {
+        hero: "url(/a.jpg)",
+      },
     },
   },
 }
