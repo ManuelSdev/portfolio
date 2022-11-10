@@ -14,9 +14,9 @@ module.exports = {
         },
       },
     },
-
+    "gatsby-plugin-breakpoints",
     `gatsby-plugin-sass`,
-    "gatsby-plugin-postcss",
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -1,5 +1,5 @@
 import React from "react"
-import SectionContent from "./SectionContent"
+import Section from "./SectionContent"
 
 const AboutMeSection = () => {
   const paragraphs = [
@@ -7,7 +7,7 @@ const AboutMeSection = () => {
     "Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.",
   ]
   return (
-    <SectionContent
+    <Section
       title={"Sobre mí"}
       subtitle={"Mi historia"}
       paragraphs={paragraphs}

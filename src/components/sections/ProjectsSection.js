@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import gifSevimatic from "../../assets/gifs/sevi.gif"
 //import LinkIcon from "../../assets/svg/link.svg"
 
-const seviProject = {
+const seviProjectProps = {
   title: "e-commerce web app",
   description: `Website de comercio electrónico. SSR para potenciar el rendimiento SEO. Con CMS que permite la edición de productos y categorías por parte del administrador.`,
   link: "",
@@ -13,7 +13,7 @@ const seviProject = {
   alt: "Gif demostración de la web Sevimatic.com",
 }
 
-const conilProject = {
+const conilProjectProps = {
   title: "bike rental web app",
   description: `Aplicación web para gestionar una empresa de alquiler de bicicletas. SSR para potenciar el rendimiento SEO. `,
   link: "",
@@ -21,11 +21,15 @@ const conilProject = {
   alt: "Gif demostración de la web Conil Bikes",
 }
 
-const projects = [seviProject, conilProject]
+const projectsProps = [seviProjectProps, conilProjectProps]
 
-const ProjectInfo = ({ title, description, link, gif, alt }) => {
+const ProjecTitle = () => {
+  return <div></div>
+}
+
+const ProjectInfo_Old = ({ title, description, link, gif, alt }) => {
   return (
-    <div className="group relative overflow-hidden bg-bronze">
+    <div className="group relative mb-8 overflow-hidden border-2 border-bronze 2xl:bg-bronze">
       <img
         src={gif}
         alt={alt}
@@ -47,14 +51,50 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
   )
 }
 
-const ProjectsSection = () => {
+const ProjectInfo = ({ title, description, link, gif, alt }) => {
   return (
-    <SectionContent title={"Proyectos"} subtitle={"que puedo hacer"}>
-      <div className="grid grid-cols-2 gap-4 font-sans">
-        {projects.map(project => {
-          const { title, description, link, gif, alt } = project
-          return ProjectInfo({ title, description, link, gif, alt })
-        })}
+    <div
+      id="project-wrapper"
+      className=" mb-5 border-[1px] border-bronze_2  bg-black p-5 2xl:bg-bronze"
+    >
+      <img
+        className="m-0 border-b-2 border-solid border-bronze  pb-6 shadow-bronze"
+        src={gif}
+        alt={alt}
+        // style={{ border: " 5px solid #555" }}
+        //   className=" transition-opacity group-hover:opacity-30 group-hover:grayscale group-hover:duration-300"
+      />
+
+      <div className="pt-5">
+        <div className="">
+          <div className=" pb-2 text-lg font-bold ">
+            {title}
+            <span className="icon-link ml-2"></span>
+          </div>
+          <div className=" text-justify">{description}</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+const ProjectsSection = () => {
+  const paragraphs = [
+    "En la actualidad, estoy trabajando en el desarrollo de dos aplicaciones para las empresas Sevimatic y Conil Bikes",
+  ]
+  return (
+    <SectionContent
+      title={"Proyectos"}
+      // subtitle={"que puedo hacer"}
+      paragraphs={paragraphs}
+    >
+      <div
+        className="font-sans 
+      
+        2xl:grid 2xl:grid-cols-2 2xl:gap-4"
+      >
+        {projectsProps.map(props => (
+          <ProjectInfo {...props} />
+        ))}
       </div>
     </SectionContent>
   )

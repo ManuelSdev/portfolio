@@ -9,7 +9,10 @@ const Logo = ({ Icon }) => {
 }
 const Sidebar = () => {
   return (
-    <div className="fixed right-0 flex h-screen w-24 items-end justify-center bg-black">
+    <div
+      id="sidebar-wrapper"
+      className="fixed right-0 hidden h-screen w-24 items-end justify-center bg-black 2xl:flex"
+    >
       <div
         className="mb-8 flex flex-col justify-evenly"
         style={{ height: "30%" }}

@@ -1,4 +1,5 @@
 import React from "react"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 const HeaderButton = ({ children }) => {
   return (
@@ -14,9 +15,9 @@ const Header = () => {
   return (
     <div
       id="header"
-      //className="invisible fixed top-0 left-0 right-0  z-10 border-b-bronze  bg-black shadow-md shadow-bronze"
+      className="hidden bg-black shadow-md shadow-bronze 2xl:visible 2xl:fixed 2xl:top-0  2xl:left-0 2xl:right-0  2xl:z-10 2xl:flex 2xl:h-20 2xl:border-b-bronze"
 
-      className=" fixed top-0 left-0 right-0  z-10 border-b-bronze  bg-black shadow-md shadow-bronze"
+      // className=" fixed top-0 left-0 right-0  z-10 border-b-bronze  bg-black shadow-md shadow-bronze"
     >
       <div className="flex flex-row justify-between px-5 py-7 text-bronze">
         <div>

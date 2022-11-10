@@ -21,13 +21,15 @@ const Typing = () => {
 
 const MainSection = () => {
   return (
-    <div className="flex  h-screen flex-col justify-center  py-5 font-sans">
-      <div className="-ml-48 rounded-l-full bg-black p-20 font-serif text-8xl text-bronze">
-        <div>Manuel</div>
-        <div>Sánchez</div>
-      </div>
-      <div className="max-w-lg text-white" style={{ paddingLeft: "8%" }}>
-        <div className="pb-5 font-semibold">
+    <div
+      id="main-section-wrapper"
+      className="pt-4 font-sans 2xl:flex 2xl:h-screen 2xl:flex-col 2xl:justify-center  2xl:px-[8%] 2xl:py-5"
+    >
+      <div
+        className="text-white 
+        2xl:max-w-lg 2xl:pl-[8%]"
+      >
+        <div className="pb-2 font-semibold 2xl:pb-5">
           <Typing />
         </div>
         <div>

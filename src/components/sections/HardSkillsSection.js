@@ -17,7 +17,7 @@ import NodeIcon from "../../assets/svg/node.svg"
 import ReduxIcon from "../../assets/svg/redux.svg"
 import MuiIcon from "../../assets/svg/mui.svg"
 
-const SkillsSection = () => {
+const HardSkillsSection = () => {
   const skills = [
     [JsIcon, "JavaScript"],
     [HtmlIcon, "HTML5"],
@@ -36,19 +36,22 @@ const SkillsSection = () => {
     [AgileIcon, "Agile"],
   ]
   return (
-    <SectionContent title={"Skills"} subtitle={"que puedo hacer"}>
-      <div className="grid grid-cols-5 gap-4">
+    <SectionContent
+      title={"Hard Skills"}
+      // subtitle={"que puedo hacer"}
+    >
+      <div className="grid grid-cols-3 gap-3 2xl:grid-cols-5">
         {skills.map(skill => {
           const [Icon, name] = skill
           return (
-            <div key={name} className="w-fit pb-1 ">
+            <div key={name} className="pb-1 2xl:w-fit ">
               <div className="flex flex-col items-center	">
                 <Icon
                   width="82px"
                   height="82px"
-                  className="rounded-lg border border-bronze bg-bronze p-0.5"
+                  className=" rounded-lg border border-bronze bg-bronze p-0.5"
                 />
-                <div className="pt-1">{name}</div>
+                <div className="pt-1 text-center">{name}</div>
               </div>
             </div>
           )
@@ -58,4 +61,4 @@ const SkillsSection = () => {
   )
 }
 
-export default SkillsSection
+export default HardSkillsSection
