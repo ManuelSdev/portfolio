@@ -77,12 +77,13 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
     </div>
   )
 }
-const ProjectsSection = () => {
+const ProjectsSection = ({ id }) => {
   const paragraphs = [
     "En la actualidad, estoy trabajando en el desarrollo de dos aplicaciones para las empresas Sevimatic y Conil Bikes",
   ]
   return (
     <SectionContent
+      id={id}
       title={"Proyectos"}
       // subtitle={"que puedo hacer"}
       paragraphs={paragraphs}

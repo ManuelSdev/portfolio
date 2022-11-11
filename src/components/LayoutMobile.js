@@ -13,7 +13,7 @@ import Footer from "./Footer"
 
 const LayoutMobile = () => {
   return (
-    <div className="bg-black_3 px-4">
+    <div className=" bg-black_3 px-4">
       <HeaderMobile addToClass={"fixed px-4"} />
       <div className="h-screen">
         <HeaderMobile addToClass={"invisible px-4"} />
@@ -21,9 +21,9 @@ const LayoutMobile = () => {
         <MainSection />
       </div>
 
-      <HardSkillsSection />
-      <SoftSkillsSections />
-      <ProjectsSection />
+      <HardSkillsSection id="hard-skills-sections" />
+      <SoftSkillsSections id="soft-skills-sections" />
+      <ProjectsSection id="projects-section" />
       <Footer />
       <Sidebar />
     </div>

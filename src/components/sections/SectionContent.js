@@ -1,10 +1,17 @@
 import React from "react"
 
-const SectionContent = ({ title, subtitle, text, children, paragraphs }) => {
+const SectionContent = ({
+  title,
+  subtitle,
+  text,
+  children,
+  paragraphs,
+  id,
+}) => {
   console.log("=============", children)
 
   return (
-    <div className="bg-softBlack border-t border-t-bronze">
+    <div id={id} className="bg-softBlack border-t border-t-bronze">
       <div
         className="max-w-4xl py-12  text-white 2xl:px-[8%] 2xl:py-20"
         //   style={{ paddingLeft: "8%", paddingRight: "8%" }}
