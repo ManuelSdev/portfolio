@@ -8,7 +8,7 @@ import gifSevimatic from "../../assets/gifs/sevi.gif"
 const seviProjectProps = {
   title: "e-commerce web app",
   description: `Website de comercio electrónico. SSR para potenciar el rendimiento SEO. Con CMS que permite la edición de productos y categorías por parte del administrador.`,
-  link: "",
+  link: "https://websevi.vercel.app/",
   gif: gifSevimatic,
   alt: "Gif demostración de la web Sevimatic.com",
 }
@@ -16,7 +16,7 @@ const seviProjectProps = {
 const conilProjectProps = {
   title: "bike rental web app",
   description: `Aplicación web para gestionar una empresa de alquiler de bicicletas. SSR para potenciar el rendimiento SEO. `,
-  link: "",
+  link: "https://conil-bikes.vercel.app/",
   gif: gifSevimatic,
   alt: "Gif demostración de la web Conil Bikes",
 }
@@ -25,6 +25,17 @@ const projectsProps = [seviProjectProps, conilProjectProps]
 
 const ProjecTitle = () => {
   return <div></div>
+}
+
+const a = link => ev => {
+  //  window.location = "/test"
+
+  window.history.replaceState(
+    "",
+    document.title,
+    window.location.pathname + window.location.search
+  )
+  window.location = link
 }
 
 const ProjectInfo_Old = ({ title, description, link, gif, alt }) => {
@@ -57,13 +68,20 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
       id="project-wrapper"
       className=" mb-5 border-[1px] border-bronze_2  bg-black p-5 2xl:bg-bronze"
     >
-      <img
-        className="m-0 border-b-2 border-solid border-bronze  pb-6 shadow-bronze"
-        src={gif}
-        alt={alt}
-        // style={{ border: " 5px solid #555" }}
-        //   className=" transition-opacity group-hover:opacity-30 group-hover:grayscale group-hover:duration-300"
-      />
+      <a
+      //   href={link}
+      >
+        <img
+          // onClick={a(link)}
+          onClick={a(link)}
+          className="m-0 border-b-2 border-solid border-bronze  pb-6 shadow-bronze"
+          src={gif}
+          alt={alt}
+
+          // style={{ border: " 5px solid #555" }}
+          //   className=" transition-opacity group-hover:opacity-30 group-hover:grayscale group-hover:duration-300"
+        />
+      </a>
 
       <div className="pt-5">
         <div className="">

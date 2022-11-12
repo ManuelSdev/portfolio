@@ -24,3 +24,12 @@ const Test = () => {
 }
 
 export default Test
+//Resuelve problema fixed-translate que añade width que supone la traslación al elemento fixed
+export function Head() {
+  return (
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+  )
+}

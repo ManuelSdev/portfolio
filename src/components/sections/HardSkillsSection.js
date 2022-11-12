@@ -17,7 +17,7 @@ import NodeIcon from "../../assets/svg/node.svg"
 import ReduxIcon from "../../assets/svg/redux.svg"
 import MuiIcon from "../../assets/svg/mui.svg"
 
-const HardSkillsSection = () => {
+const HardSkillsSection = ({ id }) => {
   const skills = [
     [JsIcon, "JavaScript"],
     [HtmlIcon, "HTML5"],
@@ -37,6 +37,7 @@ const HardSkillsSection = () => {
   ]
   return (
     <SectionContent
+      id={id}
       title={"Hard Skills"}
       // subtitle={"que puedo hacer"}
     >

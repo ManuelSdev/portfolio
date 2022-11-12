@@ -1,6 +1,6 @@
 import React from "react"
 import Header from "./Header"
-import HeaderMobile from "./header/HeaderMobile"
+import HeaderMobile from "./HeaderMobile"
 import HomeMobile from "./HomeMobile"
 import PageInfo from "./PageInfo"
 import PagePhoto from "./PagePhoto"
@@ -12,12 +12,10 @@ import SoftSkillsSections from "./sections/SoftSkillsSections"
 import Footer from "./Footer"
 
 const LayoutMobile = () => {
-  console.log(window.location.hash)
   return (
-    <div id="main-section" className=" scroll-smooth  bg-black_3 px-4	">
+    <div className=" bg-black_3 px-4">
       <HeaderMobile addToClass={"fixed px-4"} />
-      <div className="h-screen border-b border-b-bronze">
-        <HeaderMobile addToClass={"invisible px-4"} />
+      <div className="h-screen">
         <PagePhoto />
         <MainSection />
       </div>
@@ -32,11 +30,3 @@ const LayoutMobile = () => {
 }
 
 export default LayoutMobile
-
-/**
- history.pushState(
-    "",
-    document.title,
-    window.location.pathname + window.location.search
-  )
- */

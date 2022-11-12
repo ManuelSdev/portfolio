@@ -37,4 +37,14 @@
  
 @layer base{
     @import "./icofont.min.css";
+
+   html,body{
+        scroll-behavior: smooth;
+    }
+
+    .anchor-fix{
+       display:block;
+    padding-top:60px;
+    margin-top:-60px;
+    }
 }

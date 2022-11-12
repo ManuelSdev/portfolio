@@ -22,7 +22,7 @@ const Menu = ({ onClose, classes }) => {
       onClick={handleClickOutside}
       id="overlay"
       className={
-        "absolute right-0 top-0 left-0 h-screen translate-x-[100%] bg-black/70 transition-transform duration-[0.6s] ease-[ease] " +
+        "absolute right-0 top-0 left-0 z-50 h-screen translate-x-full  bg-black/70 transition-transform duration-[0.6s] ease-[ease] " +
         classes.overlay
       }
     >
@@ -30,7 +30,7 @@ const Menu = ({ onClose, classes }) => {
         onClick={a}
         id="menu-wrapper"
         className={
-          "no-close-modal absolute top-0 right-0 left-[25%]   h-screen translate-x-[100%]   bg-black_2 text-black transition-transform duration-[0.6s] ease-[ease] " +
+          "no-close-modal absolute top-0 right-0 left-[25%]  h-screen  translate-x-full   bg-black_2 text-black transition-transform duration-[0.6s] ease-[ease] " +
           classes.wrapper
         }
       >
@@ -64,39 +64,50 @@ const Menu = ({ onClose, classes }) => {
   )
 }
 
-const HeaderMobile = ({ addToClass }) => {
-  const [classes, setClasses] = useState({
-    overlay: "",
-    wrapper: "",
-  })
-  const [a, setA] = useState("")
-  const onOpen = () => {
-    setClasses({
-      overlay: "translate-x-[0]",
-      wrapper: "translate-x-[0] delay-[0.6s] ",
-    })
-  }
-  const onClose = () => {
-    setClasses({
-      overlay: "translate-x-full delay-[0.5s]",
-      wrapper: "translate-x-full",
-    })
-  }
-
+export const Topbar = ({ addToClass, onOpen }) => {
   return (
     <div
       id="header-mobile"
-      className={`${addToClass} top-0 left-0 right-0 z-10 w-screen bg-black py-4`}
+      className={`${addToClass} top-0 left-0 right-0 z-10  bg-black py-4`}
     >
       <div className="">
         <div className="flex flex-row items-center justify-between  text-3xl  text-bronze">
           <div id="name-wrapper" className="font-serif ">
             <strong>Manuel Sánchez</strong>
           </div>
-          <i className="icofont-navigation-menu" onClick={onOpen}></i>
+          <i
+            className="icofont-navigation-menu "
+            onClick={onOpen && onOpen}
+          ></i>
         </div>
-        <Menu onClose={onClose} classes={classes} a={a} />
+        {/**<Menu onClose={onClose} classes={classes} a={a} /> */}
       </div>
+    </div>
+  )
+}
+const HeaderMobile = ({ ...props }) => {
+  const [classes, setClasses] = useState({
+    overlay: "",
+    wrapper: "",
+  })
+
+  const onOpen = () => {
+    console.log("first")
+    setClasses({
+      overlay: "translate-x-[0px]",
+      wrapper: "translate-x-[0px] delay-[0.6s] ",
+    })
+  }
+  const onClose = () => {
+    setClasses({
+      overlay: "translate-x-full ",
+      wrapper: "translate-x-full",
+    })
+  }
+  return (
+    <div className="">
+      <Topbar onOpen={onOpen} {...props} />
+      <Menu onClose={onClose} classes={classes} />
     </div>
   )
 }

@@ -11,7 +11,10 @@ const SectionContent = ({
   console.log("=============", children)
 
   return (
-    <div id={id} className="bg-softBlack border-t border-t-bronze">
+    <div
+      id={id}
+      className="anchor-fix bg-softBlack block border-b-[1px] border-b-bronze"
+    >
       <div
         className="max-w-4xl py-12  text-white 2xl:px-[8%] 2xl:py-20"
         //   style={{ paddingLeft: "8%", paddingRight: "8%" }}

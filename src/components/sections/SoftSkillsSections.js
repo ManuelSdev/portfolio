@@ -30,9 +30,9 @@ const skills = [
   [VolumeIcon, "Comunicativo"],
 ]
 
-const SoftSkillsSections = () => {
+const SoftSkillsSections = ({ id }) => {
   return (
-    <SectionContent title={"Soft Skills"}>
+    <SectionContent id={id} title={"Soft Skills"}>
       <div className="grid grid-cols-3 gap-3">
         {skills.map(skill => {
           const [Icon, name] = skill
