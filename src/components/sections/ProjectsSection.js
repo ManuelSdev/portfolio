@@ -66,22 +66,18 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
   return (
     <div
       id="project-wrapper"
-      className=" mb-5 border-[1px] border-bronze_2  bg-black p-5 2xl:bg-bronze"
+      className=" mb-5 flex flex-col justify-center border-[1px] border-bronze_2 bg-black p-5 2xl:bg-bronze"
     >
-      <a
-      //   href={link}
-      >
-        <img
-          // onClick={a(link)}
-          onClick={a(link)}
-          className="m-0 border-b-2 border-solid border-bronze  pb-6 shadow-bronze"
-          src={gif}
-          alt={alt}
+      <img
+        // onClick={a(link)}
+        onClick={a(link)}
+        className="m-0 border-b-2 border-solid border-bronze  pb-6 shadow-bronze"
+        src={gif}
+        alt={alt}
 
-          // style={{ border: " 5px solid #555" }}
-          //   className=" transition-opacity group-hover:opacity-30 group-hover:grayscale group-hover:duration-300"
-        />
-      </a>
+        // style={{ border: " 5px solid #555" }}
+        //   className=" transition-opacity group-hover:opacity-30 group-hover:grayscale group-hover:duration-300"
+      />
 
       <div className="pt-5">
         <div className="">

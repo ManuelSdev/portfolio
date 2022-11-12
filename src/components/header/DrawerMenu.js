@@ -32,7 +32,7 @@ const DrawerMenu = ({ onClose, classes }) => {
         onClick={a}
         id="menu-wrapper"
         className={
-          "absolute top-0 right-0 left-[25%] h-screen translate-x-[100%] bg-black_2 text-black transition-transform duration-[0.6s] ease-[ease] " +
+          "absolute top-0 right-0 left-[calc(100%-300px)] h-screen translate-x-[100%] bg-black_2 text-black transition-transform duration-[0.6s] ease-[ease] " +
           classes.wrapper
         }
       >

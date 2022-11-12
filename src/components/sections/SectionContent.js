@@ -20,7 +20,7 @@ const SectionContent = ({
         //   style={{ paddingLeft: "8%", paddingRight: "8%" }}
       >
         <div className="2xl:pb-16">
-          <div className="pb-12 font-serif text-6xl font-extrabold text-bronze 2xl:pb-2.5">
+          <div className="pb-12 text-center font-serif text-6xl font-extrabold text-bronze 2xl:pb-2.5">
             {title}
           </div>
           <div className="text-lg font-semibold uppercase">{subtitle}</div>

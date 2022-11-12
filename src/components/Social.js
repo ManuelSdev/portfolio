@@ -5,20 +5,18 @@ import Mail from "../assets/svg/mail.svg"
 import React from "react"
 
 const Logo = ({ Icon }) => {
-  return <Icon width="52px" height="52px" className="fill-bronze " />
+  return (
+    <Icon width="52px" height="52px" className="bg-transparent fill-bronze" />
+  )
 }
 const Sidebar = () => {
   return (
-    <div
-      id="sidebar-wrapper"
-      className="fixed right-0 top-0 hidden h-screen w-24 items-end justify-center bg-black lg:flex 2xl:flex"
-    >
+    <div id="social-wrapper" className="bg-transparent">
       <div
-        className="mb-8 flex flex-col justify-evenly"
+        className="flex justify-evenly py-12 lg:hidden"
         style={{ height: "30%" }}
       >
         <Logo Icon={LinkedinIcon} />
-
         <Logo Icon={GitHubIcon} />
         <Logo Icon={WhatsappIcon} />
         <Logo Icon={Mail} />

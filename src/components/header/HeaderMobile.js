@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
-import { Link } from "gatsby"
 import DrawerMenu from "./DrawerMenu"
+import TopBar from "./TopBar"
 
 const HeaderMobile = ({ addToClass }) => {
   const [classes, setClasses] = useState({
@@ -23,17 +23,11 @@ const HeaderMobile = ({ addToClass }) => {
   }
 
   return (
-    <div className={"top-0 left-0 right-0 z-10   bg-black py-4 " + addToClass}>
-      <div className="flex flex-row items-center justify-between  text-3xl  ">
-        <Link
-          to="/test"
-          id="name-wrapper"
-          className="font-serif text-bronze no-underline"
-        >
-          <strong>Manuel Sánchez</strong>
-        </Link>
-        <i className="icofont-navigation-menu text-bronze" onClick={onOpen}></i>
-      </div>
+    <div
+      id="header-wrapper"
+      className={"top-0 left-0 right-0 z-10   bg-black py-4 " + addToClass}
+    >
+      <TopBar onOpen={onOpen} />
       <DrawerMenu onClose={onClose} classes={classes} />
     </div>
   )
