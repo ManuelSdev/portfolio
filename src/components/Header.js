@@ -1,22 +1,27 @@
 import React from "react"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
+import { sectionsMap } from "../assets/js/tools"
 
-const HeaderButton = ({ children }) => {
+const HeaderButton = ({ children, onClick }) => {
   return (
-    <div className="ml-3">
+    <button onClick={onClick} className="ml-3">
       <strong>{children}</strong>
-    </div>
+    </button>
   )
 }
 
-const titles = ["Inicio", "Sobre mí", "Resumen", "Proyectos", "Contacto"]
-
 const Header = () => {
+  const handleMenuClick = hash => ev => {
+    console.log("@@@@@@@@@@@@@", hash)
+    const element = document.getElementById(hash)
+    element.scrollIntoView()
+  }
   return (
     <div
       id="header"
-      //className="invisible fixed top-0 left-0 right-0  z-10 border-b-bronze  bg-black shadow-md shadow-bronze"
+      className=" fixed top-0 left-0 right-0 z-10   h-20  border-b-bronze bg-black shadow-md shadow-bronze"
 
-      className=" fixed top-0 left-0 right-0  z-10 border-b-bronze  bg-black shadow-md shadow-bronze"
+      // className=" fixed top-0 left-0 right-0  z-10 border-b-bronze  bg-black shadow-md shadow-bronze"
     >
       <div className="flex flex-row justify-between px-5 py-7 text-bronze">
         <div>
@@ -24,13 +29,21 @@ const Header = () => {
         </div>
         <div className="flex  flex-row justify-around">
           <div className=" flex flex-row justify-around">
-            {titles.map((title, index) => (
-              <HeaderButton key={index}>{title}</HeaderButton>
-            ))}
+            {sectionsMap.map((section, index) => {
+              const [name, hash] = section
+              return (
+                <HeaderButton onClick={handleMenuClick(hash)} key={index}>
+                  {name}
+                </HeaderButton>
+              )
+            })}
           </div>
-          <div className="ml-5">
+          <a
+            className="ml-5  text-bronze no-underline"
+            href="https://drive.google.com/uc?export=download&id=1kVuLuDyyNujt7AIrsku8dCNN0x_wZJU8"
+          >
             <strong>Descargar CV</strong>
-          </div>
+          </a>
         </div>
       </div>
     </div>

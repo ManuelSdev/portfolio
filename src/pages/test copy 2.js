@@ -21,7 +21,8 @@ const Test = () => {
   return (
     <Layout>
       <div
-        className="absolute left-0 right-0 h-full"
+        className="
+        2xl:absolute  2xl:left-0  2xl:right-0  2xl:h-full"
         style={
           {
             //  top: `${hh}px`,
@@ -31,37 +32,39 @@ const Test = () => {
         <div
           id="page-photo"
           // className="fixed left-0 flex h-screen bg-bronze"
-          className="fixed left-0 h-full bg-bronze"
-          style={{
-            top: `${hh}px`,
-            width: "calc(45% - 48px)",
-            backgroundSize: "cover",
-            backgroundPosition: "top center",
-          }}
+          className="h-[600px] bg-bronze bg-center 
+          2xl:fixed 2xl:left-0 2xl:top-20 2xl:h-full 2xl:w-[calc(45%_-_48px)] 2xl:bg-cover"
+          style={
+            {
+              //    top: `${hh}px`,
+              //  width: "calc(45% - 48px)",
+              //    backgroundSize: "cover",
+              //    backgroundPosition: "top center",
+            }
+          }
         >
           <div
-            className=" h-screen  bg-bronze"
-            style={{
-              backgroundImage: `url(${background})`,
-              backgroundSize: "cover",
-              backgroundPosition: "top center",
-              mixBlendMode: "luminosity",
-              boxSizing: "content-box",
-              backgroundRepeat: "no-repeat",
-            }}
+            className="h-full bg-hero bg-cover bg-top  bg-no-repeat mix-blend-luminosity 2xl:h-screen"
+            style={
+              {
+                // backgroundImage: `url(${background})`,
+                // backgroundSize: "cover",
+                //backgroundPosition: "top center",
+                // mixBlendMode: "luminosity",
+                //boxSizing: "content-box",
+                // backgroundRepeat: "no-repeat",
+              }
+            }
           ></div>
         </div>
 
         <div
-          id="page-content"
-          //   className="absolute right-24 border-r border-r-bronze bg-black"
-          className="absolute right-24 border-r border-r-bronze bg-black"
-          style={{
-            width: "calc(55% - 48px)",
-          }}
+          id="page-info"
+          className=" bg-black 
+          2xl:absolute 2xl:right-24 2xl:w-[calc(55%_-_48px)] 2xl:border-r 2xl:border-r-bronze"
         >
           <div
-            id="page-content-sections"
+            id="page-info-sections"
             //  className="overflow-y-auto px-5"
           >
             <MainSection />

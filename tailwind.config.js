@@ -10,6 +10,10 @@ module.exports = {
     extend: {
       colors: {
         bronze: "#88715B",
+        bronze_2: "#89715b",
+        black_1: "#090909",
+        black_2: "#111111",
+        black_3: "#141414",
       },
       fontFamily: {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
@@ -20,7 +24,7 @@ module.exports = {
         a: "url(/link.svg)",
       },
       backgroundImage: {
-        hero: "url(/a.jpg)",
+        hero: "url(/me.jpg)",
       },
     },
   },

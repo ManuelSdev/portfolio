@@ -1,3 +1,13 @@
+const myCustomQueries = {
+  xs: "(min-width: 500px)",
+  sm: "(min-width: 640px)",
+  md: "(min-width: 768px)",
+  lg: "(min-width: 1024px)",
+  xl: "(min-width: 1280px)",
+  xl2: "(min-width: 1536px)",
+  portrait: "(orientation: portrait)",
+}
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -14,9 +24,14 @@ module.exports = {
         },
       },
     },
-
+    {
+      resolve: "gatsby-plugin-breakpoints",
+      options: {
+        queries: myCustomQueries,
+      },
+    },
     `gatsby-plugin-sass`,
-    "gatsby-plugin-postcss",
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
