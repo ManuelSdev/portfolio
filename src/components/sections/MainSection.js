@@ -9,19 +9,17 @@ const MainSection = ({ addToClass }) => {
     <div
       id="main-section-wrapper"
       className={
-        ` pt-4 font-sans 
-       
-        lg:flex lg:h-screen lg:flex-col lg:justify-center  lg:px-[8%] lg:py-5 ` +
+        ` pt-4 font-sans        
+        lg:flex lg:h-screen lg:flex-col lg:justify-center   lg:py-5 ` +
         addToClass
       }
     >
       {lg && <Name />}
-
       <div
         className="text-white 
         lg:max-w-lg lg:pl-[8%]"
       >
-        <div className="pb-2 font-semibold 2xl:pb-5">
+        <div className="pb-2 font-semibold lg:pb-5">
           <Typing />
         </div>
         <div>

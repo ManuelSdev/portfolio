@@ -20,7 +20,8 @@ const LayoutMobile = () => {
 
   return (
     <div id="layout-wrapper" className=" scroll-smooth  bg-black_3 px-4	">
-      <HeaderMobile addToClass={"fixed px-4"} />
+      {lg ? <Header /> : <HeaderMobile addToClass={"fixed px-4"} />}
+
       {lg ? (
         <PagePhoto />
       ) : (
@@ -29,12 +30,17 @@ const LayoutMobile = () => {
           className="h-screen border-b border-b-bronze bg-red-300"
         >
           <HeaderMobile addToClass={"invisible px-4 "} />
-          <div className="flex h-[115vw] max-h-[70%]">
+          <div
+            className="flex h-[115vw] max-h-[600px]  w-full
+         
+          "
+          >
             <PagePhoto />
             <div
-              className="relative top-0 right-0  h-full w-[7vw] bg-black 
-            min-[550px]:w-[15vw]
-            sm:w-[25vw]"
+              className="relative top-0 right-0  h-full w-[5%%] grow bg-gray-200
+            
+            
+            "
             >
               <Name />
             </div>
@@ -46,7 +52,7 @@ const LayoutMobile = () => {
       <div
         id="desktop-page-content-wrapper"
         //   className="absolute right-24 border-r border-r-bronze bg-black"
-        className="lg:absolute lg:right-24 lg:w-[calc(50%-48px)] lg:border-r lg:border-r-bronze lg:bg-black"
+        className="lg:absolute lg:right-24 lg:w-[calc(50%-48px)] lg:border-r lg:border-r-bronze lg:bg-black 2xl:w-[calc(55%-48px)]"
       >
         <MainSection addToClass={"hidden lg:block"} />
         <HardSkillsSection id="hard-skills-sections" />

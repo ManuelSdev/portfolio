@@ -39,13 +39,14 @@ const HardSkillsSection = ({ id }) => {
     <SectionContent
       id={id}
       title={"Hard Skills"}
+      //addClasses={"border-t-[1px] border-t-bronze"}
       // subtitle={"que puedo hacer"}
     >
-      <div className="grid grid-cols-3 gap-3 2xl:grid-cols-5">
+      <div className="grid grid-cols-3 gap-3 2xl:grid-cols-5 ">
         {skills.map(skill => {
           const [Icon, name] = skill
           return (
-            <div key={name} className="pb-1 2xl:w-fit ">
+            <div key={name} className="pb-1  ">
               <div className="flex flex-col items-center	">
                 <Icon
                   width="82px"

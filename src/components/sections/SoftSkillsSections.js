@@ -37,7 +37,7 @@ const SoftSkillsSections = ({ id }) => {
         {skills.map(skill => {
           const [Icon, name] = skill
           return (
-            <div key={name} className="pb-1 2xl:w-fit ">
+            <div key={name} className="pb-1 ">
               <div className="flex flex-col items-center	">
                 <Icon
                   width="82px"
