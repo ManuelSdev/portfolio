@@ -47,4 +47,8 @@
     padding-top:60px;
     margin-top:-60px;
     }
+
+    .bg-me{
+        background-image: url('../../public/me.jpg');
+    }
 }
