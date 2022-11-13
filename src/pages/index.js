@@ -33,6 +33,7 @@ const links = [
   },
   {
     text: "TESTTT",
+    url: "/test",
   },
 ]
 

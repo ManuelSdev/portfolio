@@ -43,7 +43,7 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
           <div className=" text-justify">{description}</div>
         </div>
       </div>
-      <Link href={link}>
+      <a to={link}>
         <img
           // onClick={a(link)}
 
@@ -54,7 +54,7 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
           // style={{ border: " 5px solid #555" }}
           //   className=" transition-opacity group-hover:opacity-30 group-hover:grayscale group-hover:duration-300"
         />
-      </Link>
+      </a>
     </div>
   )
 }
