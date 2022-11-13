@@ -15,8 +15,7 @@ const SectionContent = ({
     <div
       id={id}
       className={
-        "anchor-fix bg-softBlack block border-b-[1px]  border-b-bronze" +
-        addClasses
+        "bg-softBlack block border-b-[1px]  border-b-bronze " + addClasses
       }
     >
       <div

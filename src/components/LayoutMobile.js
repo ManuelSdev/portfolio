@@ -54,8 +54,11 @@ const LayoutMobile = () => {
         //   className="absolute right-24 border-r border-r-bronze bg-black"
         className="lg:absolute lg:right-24 lg:w-[calc(50%-48px)] lg:border-r lg:border-r-bronze lg:bg-black 2xl:w-[calc(55%-48px)]"
       >
-        <MainSection addToClass={"hidden lg:block"} />
-        <HardSkillsSection id="hard-skills-sections" />
+        <MainSection addToClass={"hidden lg:block  "} />
+        <HardSkillsSection
+          id="hard-skills-sections"
+          addClasses="border-t-[1px] border-t-bronze"
+        />
         <SoftSkillsSections id="soft-skills-sections" />
         <ProjectsSection id="projects-section" />
         <Social />

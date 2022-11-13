@@ -3,6 +3,7 @@ import SectionContent from "./SectionContent"
 import { StaticImage } from "gatsby-plugin-image"
 
 import gifSevimatic from "../../assets/gifs/sevi.gif"
+import { Link } from "gatsby"
 //import LinkIcon from "../../assets/svg/link.svg"
 
 const seviProjectProps = {
@@ -27,17 +28,6 @@ const ProjecTitle = () => {
   return <div></div>
 }
 
-const a = link => ev => {
-  //  window.location = "/test"
-
-  window.history.replaceState(
-    "",
-    document.title,
-    window.location.pathname + window.location.search
-  )
-  window.location = link
-}
-
 const ProjectInfo = ({ title, description, link, gif, alt }) => {
   return (
     <div
@@ -53,16 +43,18 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
           <div className=" text-justify">{description}</div>
         </div>
       </div>
-      <img
-        // onClick={a(link)}
-        onClick={a(link)}
-        className="m-0 border-t-2 border-solid border-bronze  pt-8 shadow-bronze"
-        src={gif}
-        alt={alt}
+      <Link href={link}>
+        <img
+          // onClick={a(link)}
 
-        // style={{ border: " 5px solid #555" }}
-        //   className=" transition-opacity group-hover:opacity-30 group-hover:grayscale group-hover:duration-300"
-      />
+          className="m-0 border-t-2 border-solid border-bronze  pt-8 shadow-bronze"
+          src={gif}
+          alt={alt}
+
+          // style={{ border: " 5px solid #555" }}
+          //   className=" transition-opacity group-hover:opacity-30 group-hover:grayscale group-hover:duration-300"
+        />
+      </Link>
     </div>
   )
 }

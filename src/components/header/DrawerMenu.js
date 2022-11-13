@@ -1,22 +1,21 @@
 import React from "react"
 import BackIcon from "../../assets/svg/arrow-left.svg"
-
+import { sectionsMap } from "../../assets/js/tools"
 const DrawerMenu = ({ onClose, classes }) => {
-  const sections = [
-    ["Sobre mí", "#main-section"],
-    ["Hard skills", "#hard-skills-sections"],
-    ["Soft skills", "#soft-skills-sections"],
-    ["Proyectos", "#projects-section"],
-    ["Descargar CV", ""],
-  ]
   const handleClickOutside = ev => {
     console.log("event.target", ev.target.classList)
     // if (!!!ev.target.class || !ev.target.class.includes("no-close-modal"))
     onClose()
   }
 
-  const a = ev => {
-    console.log("---------")
+  const handleMenuClick = hash => ev => {
+    console.log("@@@@@@@@@@@@@", hash)
+    const element = document.getElementById(hash)
+    element.scrollIntoView()
+    onClose()
+  }
+
+  const handleBubble = ev => {
     ev.stopPropagation()
   }
   return (
@@ -29,7 +28,7 @@ const DrawerMenu = ({ onClose, classes }) => {
       }
     >
       <div
-        onClick={a}
+        onClick={handleBubble}
         id="menu-wrapper"
         className={
           "absolute top-0 right-0 left-[calc(100%-300px)] h-screen translate-x-[100%] bg-black_2 text-black transition-transform duration-[0.6s] ease-[ease] " +
@@ -38,33 +37,41 @@ const DrawerMenu = ({ onClose, classes }) => {
       >
         <div>
           <div className="flex justify-end border-b-[1px] border-bronze fill-bronze pt-4 pb-4 pr-4">
-            <BackIcon
-              width="60px"
-              height="60px"
-              viewBox="0 0 1000 1000"
-              className="  "
-              onClick={handleClickOutside}
-            />
+            <button>
+              <BackIcon
+                width="60px"
+                height="60px"
+                viewBox="0 0 1000 1000"
+                className="  "
+                onClick={handleClickOutside}
+              />
+            </button>
           </div>
-          {sections.map(section => {
-            const [name, path] = section
+          {sectionsMap.map(section => {
+            const [name, hash] = section
             return (
               <div
                 className="border-b-[1px] border-bronze placeholder:no-underline"
                 key={name}
               >
-                <a
+                <button
                   //to={path}
                   //replace
-                  href={path}
-                  onClick={onClose}
+                  //href={path}
+                  onClick={handleMenuClick(hash)}
                   className=" block p-6 font-bold uppercase text-bronze no-underline"
                 >
                   {name}
-                </a>
+                </button>
               </div>
             )
           })}
+          <a
+            className="block border-b-[1px] border-bronze p-6 font-bold uppercase text-bronze no-underline"
+            href="https://drive.google.com/uc?export=download&id=1kVuLuDyyNujt7AIrsku8dCNN0x_wZJU8"
+          >
+            <strong>Descargar CV</strong>
+          </a>
         </div>
       </div>
     </div>
