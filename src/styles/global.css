@@ -49,6 +49,6 @@
     }
 
     .bg-me{
-        background-image: url('../../public/me.jpg');
+        background-image: url('/me.jpg');
     }
 }
