@@ -1,5 +1,5 @@
 import React from "react"
-
+import me from "../images/me.jpg"
 const PagePhoto = ({ addToClass }) => {
   return (
     <div
@@ -11,7 +11,10 @@ const PagePhoto = ({ addToClass }) => {
       lg:top-20 lg:h-full lg:w-[calc(50%_-_48px)] lg:max-w-none 
     lg:bg-cover   2xl:w-[calc(45%_-_48px)]"
     >
-      <div className="bg-me h-full bg-cover bg-top bg-no-repeat mix-blend-luminosity 2xl:h-screen"></div>
+      <div
+        className="h-full bg-cover bg-top bg-no-repeat mix-blend-luminosity 2xl:h-screen"
+        style={{ backgroundImage: `url(${me})` }}
+      ></div>
     </div>
   )
 }
