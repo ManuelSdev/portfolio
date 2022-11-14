@@ -24,11 +24,11 @@ const Layout = () => {
       >
         <MainSection addToClass={"hidden lg:block  "} />
         <HardSkillsSection
-          id="hard-skills-sections"
+          anchorName="hard-skills-sections"
           addClasses="border-t-[1px] border-t-bronze"
         />
-        <SoftSkillsSections id="soft-skills-sections" />
-        <ProjectsSection id="projects-section" />
+        <SoftSkillsSections anchorName="soft-skills-sections" />
+        <ProjectsSection anchorName="projects-section" />
         <Social />
         <Footer />
       </div>

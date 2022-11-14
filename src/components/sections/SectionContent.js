@@ -8,16 +8,19 @@ const SectionContent = ({
   paragraphs,
   id,
   addClasses,
+  anchorName,
 }) => {
   console.log("=============", children)
 
   return (
     <div
-      id={id}
+      // id={id}
       className={
-        "bg-softBlack block border-b-[1px]  border-b-bronze " + addClasses
+        "bg-softBlack relative block  border-b-[1px] border-b-bronze" +
+        addClasses
       }
     >
+      <div id={anchorName} className="absolute -top-20 left-0"></div>
       <div
         className="max-w-4xl py-12  text-white lg:px-[8%] lg:py-20"
         //   style={{ paddingLeft: "8%", paddingRight: "8%" }}

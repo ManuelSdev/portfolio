@@ -1,9 +1,10 @@
 import React from "react"
 import BackIcon from "../../assets/svg/arrow-left.svg"
 import { sectionsMap } from "../../assets/js/tools"
+
 const DrawerMenu = ({ onClose, classes }) => {
   const handleClickOutside = ev => {
-    console.log("event.target", ev.target.classList)
+    console.log("handleClickOutside")
     // if (!!!ev.target.class || !ev.target.class.includes("no-close-modal"))
     onClose()
   }
@@ -11,7 +12,8 @@ const DrawerMenu = ({ onClose, classes }) => {
   const handleMenuClick = hash => ev => {
     console.log("@@@@@@@@@@@@@", hash)
     const element = document.getElementById(hash)
-    element.scrollIntoView()
+    console.log("****************", element)
+    hash && element.scrollIntoView()
     onClose()
   }
 
