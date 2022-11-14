@@ -1,13 +1,5 @@
 import React from "react"
-import Layout from "../components/Layout"
-import LayoutMobile from "../components/LayoutMobile"
-import AboutMeSection from "../components/sections/AboutMeSection"
-import MainSection from "../components/sections/MainSection"
-import ProjectsSection from "../components/sections/ProjectsSection"
-import HardSkillsSection from "../components/sections/HardSkillsSection"
-import Sidebar from "../components/Sidebar"
-
-import background from "../images/me.jpg"
+import Layout from "../components/elements/Layout"
 
 const Test = () => {
   const [hh, sethh] = React.useState(20)
@@ -20,7 +12,7 @@ const Test = () => {
 
   const percentage = (total, partial) => (partial * total) / 100
 
-  return <LayoutMobile />
+  return <Layout />
 }
 
 export default Test

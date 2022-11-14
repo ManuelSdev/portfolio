@@ -1,9 +1,8 @@
-import GitHubIcon from "../assets/svg/github.svg"
-import LinkedinIcon from "../assets/svg/linkedin.svg"
-import WhatsappIcon from "../assets/svg/whatsapp.svg"
-import Mail from "../assets/svg/mail.svg"
+import GitHubIcon from "../../assets/svg/github.svg"
+import LinkedinIcon from "../../assets/svg/linkedin.svg"
+import WhatsappIcon from "../../assets/svg/whatsapp.svg"
+import Mail from "../../assets/svg/mail.svg"
 import React from "react"
-import { Link } from "gatsby"
 
 const Logo = ({ Icon, link }) => {
   return (

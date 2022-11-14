@@ -1,6 +1,7 @@
 import React from "react"
-import me from "../images/me.jpg"
-const PagePhoto = ({ addToClass }) => {
+import me from "../../images/me.jpg"
+
+const PagePhoto = () => {
   return (
     <div
       id="photo-wrapper"
@@ -20,13 +21,3 @@ const PagePhoto = ({ addToClass }) => {
 }
 
 export default PagePhoto
-
-//     sm:relative sm:top-0 sm:left-0 sm:h-full
-/**
- 
-
-
-  className=" w-[95vw] bg-bronze bg-center 
-      min-[550px]:w-[85vw]
-      sm:w-[75vw]
- */

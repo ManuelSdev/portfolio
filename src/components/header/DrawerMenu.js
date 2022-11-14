@@ -70,7 +70,7 @@ const DrawerMenu = ({ onClose, classes }) => {
             className="block border-b-[1px] border-bronze p-6 font-bold uppercase text-bronze no-underline"
             href="https://drive.google.com/uc?export=download&id=1kVuLuDyyNujt7AIrsku8dCNN0x_wZJU8"
           >
-            <strong>Descargar CV</strong>
+            Descargar CV
           </a>
         </div>
       </div>

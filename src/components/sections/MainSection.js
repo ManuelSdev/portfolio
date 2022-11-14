@@ -1,6 +1,6 @@
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import React from "react"
-import Typing from "../Typing"
+import Typing from "../elements/Typing"
 import Name from "./Name"
 
 const MainSection = ({ addToClass }) => {

@@ -1,9 +1,7 @@
 import React from "react"
-import { useState } from "react"
 import DrawerMenu from "./DrawerMenu"
-import TopBar from "./TopBar"
-
-const HeaderMobile = ({ addToClass }) => {
+import { useState } from "react"
+const DrawerButton = () => {
   const [classes, setClasses] = useState({
     overlay: "",
     wrapper: "",
@@ -23,14 +21,15 @@ const HeaderMobile = ({ addToClass }) => {
   }
 
   return (
-    <div
-      id="header-wrapper"
-      className={"top-0 left-0 right-0 z-10   bg-black py-4 " + addToClass}
-    >
-      <TopBar onOpen={onOpen} />
+    <div id="drawer-button" className="lg:hidden">
+      <i
+        id="drawer-menu-button"
+        className="icofont-navigation-menu text-bronze"
+        onClick={onOpen}
+      ></i>
       <DrawerMenu onClose={onClose} classes={classes} />
     </div>
   )
 }
 
-export default HeaderMobile
+export default DrawerButton
