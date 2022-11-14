@@ -7,7 +7,7 @@ const MobileHomeSection = () => {
   return (
     <div
       id="photo-main-section-wrapper"
-      className="h-screen border-b border-b-bronze bg-black_3 pt-20 lg:hidden"
+      className="h-screen border-b border-b-bronze bg-red-300 pt-20 lg:hidden"
     >
       <div className="flex h-[115vw] max-h-[600px]  w-full ">
         <PagePhoto />

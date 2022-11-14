@@ -12,11 +12,14 @@ const Header = () => {
   return (
     <div
       id="header"
-      className=" lg-px-5 fixed top-0 left-0 right-0 z-10 h-20 border-b-bronze bg-black  px-4 shadow-md shadow-bronze lg:py-7"
+      className=" fixed top-0 left-0 right-0 z-10 flex h-20 items-center bg-black px-4 py-5 shadow-md lg:border-b-bronze lg:px-5 lg:py-7 lg:shadow-bronze"
 
       // className=" fixed top-0 left-0 right-0  z-10 border-b-bronze  bg-black shadow-md shadow-bronze"
     >
-      <div id="kkskks" className="flex flex-row justify-between  text-bronze">
+      <div
+        id="kkskks"
+        className="flex grow flex-row justify-between text-xl text-bronze"
+      >
         <div className="font-bold">Manuel Sánchez</div>
         <div className=" flex flex-row   justify-around">
           <div

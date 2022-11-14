@@ -1,10 +1,8 @@
-import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import React from "react"
 import Typing from "../elements/Typing"
 import Name from "./Name"
 
 const MainSection = ({ addToClass }) => {
-  const { lg } = useBreakpoint()
   return (
     <div
       id="main-section-wrapper"
@@ -14,7 +12,10 @@ const MainSection = ({ addToClass }) => {
         addToClass
       }
     >
-      {lg && <Name />}
+      <div className="hidden lg:block">
+        <Name />
+      </div>
+
       <div
         className="text-white 
         lg:max-w-lg lg:pl-[8%]"
@@ -23,9 +24,8 @@ const MainSection = ({ addToClass }) => {
           <Typing />
         </div>
         <div>
-          Hello! I am Web Developer from United States, New York. I have rich
-          experience in web site design and building, also I am good at
-          wordpress. I love to talk with you about our unique
+          Desarrollador web full stack especializado en JavaScript. Entusiasta
+          de la programación, las matemáticas, la lectura y el deporte.
         </div>
         <div>
           <div>CONTACTO</div>
