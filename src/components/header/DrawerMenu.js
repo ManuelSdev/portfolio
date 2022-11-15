@@ -13,7 +13,7 @@ const DrawerMenu = ({ onClose, classes }) => {
     console.log("@@@@@@@@@@@@@", hash)
     const element = document.getElementById(hash)
     console.log("****************", element)
-    hash && element.scrollIntoView()
+    element.scrollIntoView()
     onClose()
   }
 
@@ -25,7 +25,7 @@ const DrawerMenu = ({ onClose, classes }) => {
       onClick={handleClickOutside}
       id="overlay"
       className={
-        "absolute right-0 top-0 left-0 z-20 h-screen translate-x-[100%] bg-black/70 transition-transform duration-[0.6s] ease-[ease] " +
+        "absolute right-0 top-0 left-0 z-20 h-screen translate-x-full bg-black/70 transition-transform duration-[0.6s] ease-[ease] " +
         classes.overlay
       }
     >
@@ -33,7 +33,7 @@ const DrawerMenu = ({ onClose, classes }) => {
         onClick={handleBubble}
         id="menu-wrapper"
         className={
-          "absolute top-0 right-0 left-[calc(100%-300px)] h-screen translate-x-[100%] bg-black_2 text-black transition-transform duration-[0.6s] ease-[ease] " +
+          "absolute top-0 right-0 left-[calc(100%-300px)] h-screen translate-x-full bg-black_2 text-black transition-transform duration-[0.6s] ease-[ease] " +
           classes.wrapper
         }
       >

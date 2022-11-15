@@ -11,7 +11,7 @@ const MobileHomeSection = () => {
     >
       <div className="flex h-[115vw] max-h-[600px]  w-full ">
         <PagePhoto />
-        <div className="relative top-0 right-0  h-full w-[5%%] grow bg-black ">
+        <div className="relative top-0 right-0  h-full w-[5%] grow bg-black ">
           <Name />
         </div>
       </div>
