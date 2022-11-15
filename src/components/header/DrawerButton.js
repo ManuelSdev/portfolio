@@ -10,14 +10,14 @@ const DrawerButton = () => {
   const onOpen = () => {
     console.log("###########")
     setClasses({
-      overlay: "translate-x-[0px]",
-      wrapper: "translate-x-[0px] delay-[0.5s] ",
+      overlay: " translate-x-0 ",
+      wrapper: " translate-x-0 delay-[0.5s] ",
     })
   }
   const onClose = () => {
     setClasses({
-      overlay: "translate-x-[100%] delay-[0.5s]",
-      wrapper: "translate-x-[100%]",
+      overlay: " translate-x-full delay-[0.5s] ",
+      wrapper: " translate-x-full ",
     })
   }
 

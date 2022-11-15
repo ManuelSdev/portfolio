@@ -10,13 +10,18 @@ import SoftSkillsSections from "../sections/SoftSkillsSections"
 import Footer from "./Footer"
 import HeaderV from "../header/Header"
 import MobileHomeSection from "../sections/MobileHomeSection"
+import MobilePhotoSection from "../sections/MobilePhotoSection"
 
 const Layout = () => {
   return (
-    <div id="layout-wrapper" className=" scroll-smooth  bg-black_3 px-4	lg:px-0">
+    <div id="layout-wrapper" className=" scroll-smooth  bg-black_2 px-4	lg:px-0">
       <HeaderV />
       <PagePhoto />
-      <MobileHomeSection />
+      <div className="lg:hidden">
+        <MobileHomeSection />
+        <MobilePhotoSection />
+      </div>
+
       <div
         id="desktop-page-content-wrapper"
         //   className="absolute right-24 border-r border-r-bronze bg-black"

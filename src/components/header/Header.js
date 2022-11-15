@@ -20,7 +20,7 @@ const Header = () => {
         id="kkskks"
         className="flex grow flex-row justify-between text-xl text-bronze"
       >
-        <div className="font-bold">Manuel Sánchez</div>
+        <div className="font-bold">Manuel Sánchez Manzanares</div>
         <div className=" flex flex-row   justify-around">
           <div
             id="top-menu"

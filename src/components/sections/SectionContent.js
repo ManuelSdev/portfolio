@@ -16,29 +16,30 @@ const SectionContent = ({
     <div
       // id={id}
       className={
-        "bg-softBlack relative block  border-b-[1px] border-b-bronze" +
+        "relative block border-b-[1px]  border-b-bronze bg-black_1 " +
         addClasses
       }
     >
       <div id={anchorName} className="absolute -top-20 left-0"></div>
       <div
-        className="max-w-4xl py-12  text-white lg:px-[8%] lg:py-20"
+        className="py-12 text-white  lg:max-w-4xl lg:px-[8%] lg:py-20"
         //   style={{ paddingLeft: "8%", paddingRight: "8%" }}
       >
         <div className="">
-          <div className="pb-10 text-center font-serif text-6xl font-extrabold text-bronze xl:text-left ">
+          <div className="pb-14 text-center font-serif text-6xl font-extrabold text-bronze xl:text-left ">
             {title}
           </div>
           <div className="text-lg font-semibold uppercase">{subtitle}</div>
         </div>
-        <div className="pb-8 text-base">
-          {paragraphs &&
-            paragraphs.map((elem, index) => (
+        {paragraphs && (
+          <div className="pb-8 text-base">
+            {paragraphs.map((elem, index) => (
               <div key={index} className="mb-7">
                 {elem}
               </div>
             ))}
-        </div>
+          </div>
+        )}
         <div>{children}</div>
       </div>
     </div>
