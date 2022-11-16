@@ -2,7 +2,7 @@ import React from "react"
 import BackIcon from "../../assets/svg/arrow-left.svg"
 import { sectionsMap } from "../../assets/js/tools"
 
-const DrawerMenu = ({ onClose, classes }) => {
+const DrawerMenu = ({ onClose, translate }) => {
   const handleClickOutside = ev => {
     console.log("handleClickOutside")
     // if (!!!ev.target.class || !ev.target.class.includes("no-close-modal"))
@@ -25,16 +25,16 @@ const DrawerMenu = ({ onClose, classes }) => {
       onClick={handleClickOutside}
       id="overlay"
       className={
-        "absolute right-0 top-0 left-0 z-20 h-screen translate-x-full bg-black/70 transition-transform duration-[0.6s] ease-[ease] " +
-        classes.overlay
+        "absolute right-0 top-0 left-0 z-20 h-screen  bg-black/70 transition-transform duration-[0.6s] ease-[ease] " +
+        translate.overlay
       }
     >
       <div
         onClick={handleBubble}
         id="menu-wrapper"
         className={
-          "absolute top-0 right-0 left-[calc(100%-300px)] h-screen translate-x-full bg-black_2 text-black transition-transform duration-[0.6s] ease-[ease] " +
-          classes.wrapper
+          "absolute top-0 right-0 left-[calc(100%-300px)] h-screen  bg-black_2 text-black transition-transform duration-[0.6s] ease-[ease] " +
+          translate.wrapper
         }
       >
         <div>
