@@ -39,7 +39,9 @@ const Header = ({ buttonColor }) => {
 
               return (
                 <button
-                  className={"ml-3 font-bold " + buttonColor[hash]}
+                  className={
+                    "ml-3 font-bold hover:text-white " + buttonColor[hash]
+                  }
                   onClick={handleClick(hash)}
                   key={index}
                 >
@@ -48,7 +50,9 @@ const Header = ({ buttonColor }) => {
               )
             })}
             <a
-              className={"ml-5  text-bronze no-underline"}
+              className={
+                "ml-5 rounded-full border-[1px] border-bronze p-2 text-bronze no-underline hover:bg-white hover:text-black"
+              }
               href="https://drive.google.com/uc?export=download&id=1kVuLuDyyNujt7AIrsku8dCNN0x_wZJU8"
             >
               <strong>Descargar CV</strong>
