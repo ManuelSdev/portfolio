@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React from "react"
 
 import PagePhoto from "./PagePhoto"
 import MainSection from "../sections/MainSection"
@@ -12,35 +12,40 @@ import HeaderV from "../header/Header"
 import MobileHomeSection from "../sections/MobileHomeSection"
 import MobilePhotoSection from "../sections/MobilePhotoSection"
 
-import { motion, useAnimation, useScroll } from "framer-motion"
-
-import { sectionsMap } from "../../assets/js/tools"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import { useEffect } from "react"
 
 const Layout = () => {
-  const hashColorObjectMap = sectionsMap.reduce((acc, element) => {
-    const [sectionName, sectionHash] = element
-    return { ...acc, [sectionHash]: "text-bronze" }
-  }, {})
+  const boxVariant = {
+    visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 1 } },
+    hidden: { opacity: 0, scale: 0, x: 200 },
+  }
+  const control = useAnimation()
+  const [ref, inView] = useInView()
 
-  const [hashColors, setHashColors] = useState({ ...hashColorObjectMap })
-
-  const handleOnViewportEnter = anchorName =>
-    setHashColors({ ...hashColors, [anchorName]: "text-white" })
-
-  const handleOnViewportLeave = anchorName =>
-    setHashColors({ ...hashColors, [anchorName]: "text-bronze" })
-
-  const viewport = { amount: "all" }
-
-  const props = { handleOnViewportEnter, handleOnViewportLeave, viewport }
+  useEffect(() => {
+    if (inView) {
+      control.start("visible")
+    }
+  }, [control, inView])
   return (
     <div id="layout-wrapper" className=" scroll-smooth  bg-black_2 px-4	lg:px-0">
-      <HeaderV buttonColor={hashColors} />
+      <HeaderV />
       <PagePhoto />
       <div className="lg:hidden">
         <MobileHomeSection />
         <MobilePhotoSection />
       </div>
+      <motion.div
+        ref={ref}
+        className="box"
+        initial="hidden"
+        animate={control}
+        variants={boxVariant}
+      >
+        <h1 className="text-white">Boxsssssssssssssss</h1>
+      </motion.div>
       <div
         id="desktop-page-content-wrapper"
         //   className="absolute right-24 border-r border-r-bronze bg-black"
@@ -50,14 +55,9 @@ const Layout = () => {
         <HardSkillsSection
           anchorName="hard-skills-sections"
           addClasses="border-t-[1px] border-t-bronze"
-          {...props}
         />
-        <SoftSkillsSections {...props} anchorName="soft-skills-sections" />
-        <ProjectsSection
-          {...props}
-          viewport={{ amount: 0.5 }}
-          anchorName="projects-section"
-        />
+        <SoftSkillsSections anchorName="soft-skills-sections" />
+        <ProjectsSection anchorName="projects-section" />
         <Social />
         <Footer />
       </div>
@@ -68,14 +68,3 @@ const Layout = () => {
 }
 
 export default Layout
-
-/**
-    <motion.div
-          onViewportEnter={t}
-          onViewportLeave={() => console.log("+++++++++++++++++++++++++++++++")}
-          viewport={{ amount: "all" }}
-          className="h-[500px] bg-slate-100 p-10"
-        >
-          HOLAAAAAAAAAAAA
-        </motion.div>
- */

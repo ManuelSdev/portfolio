@@ -1,5 +1,7 @@
 import React from "react"
 
+import { motion, useAnimation, useScroll } from "framer-motion"
+
 const SectionContent = ({
   title,
   subtitle,
@@ -9,14 +11,19 @@ const SectionContent = ({
   id,
   addClasses,
   anchorName,
+  handleOnViewportEnter,
+  handleOnViewportLeave,
+  viewport,
 }) => {
-  console.log("=============", children)
-
+  const t = () => console.log("1111111111111111111")
   return (
-    <div
+    <motion.div
       // id={id}
+      onViewportEnter={() => handleOnViewportEnter(anchorName)}
+      onViewportLeave={() => handleOnViewportLeave(anchorName)}
+      viewport={viewport}
       className={
-        "relative block border-b-[1px]  border-b-bronze bg-black_1 " +
+        "relative block border-b-[1px]  border-b-bronze bg-black_3 " +
         addClasses
       }
     >
@@ -42,7 +49,7 @@ const SectionContent = ({
         )}
         <div>{children}</div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

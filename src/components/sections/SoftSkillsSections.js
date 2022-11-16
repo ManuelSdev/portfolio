@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 import SectionContent from "./SectionContent"
 //import CompassIcon from "../../assets/svg/ruler-compass-alt.svg"
 import CompassIcon from "../../assets/svg/ruler-compass-alt.svg"
@@ -16,7 +16,6 @@ import SpeedIcon from "../../assets/svg/speed-meter.svg"
 import DiplomaIcon from "../../assets/svg/certificate-alt-2.svg"
 import VolumeIcon from "../../assets/svg/volume-up.svg"
 import MiningIcon from "../../assets/svg/mining.svg"
-
 //Icon classes and descriptions map
 const skills = [
   [WorkerIcon, "Trabajador y disciplinado"],

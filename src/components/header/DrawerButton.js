@@ -2,20 +2,22 @@ import React from "react"
 import DrawerMenu from "./DrawerMenu"
 import { useState } from "react"
 const DrawerButton = () => {
-  const [classes, setClasses] = useState({
-    overlay: "",
-    wrapper: "",
+  const [translate, setTranslate] = useState({
+    overlay: " translate-x-full ",
+    wrapper: " translate-x-full ",
   })
 
   const onOpen = () => {
     console.log("###########")
-    setClasses({
+    const element = document.getElementById("overlay")
+    console.log("*****************************", element)
+    setTranslate({
       overlay: " translate-x-0 ",
       wrapper: " translate-x-0 delay-[0.5s] ",
     })
   }
   const onClose = () => {
-    setClasses({
+    setTranslate({
       overlay: " translate-x-full delay-[0.5s] ",
       wrapper: " translate-x-full ",
     })
@@ -28,7 +30,7 @@ const DrawerButton = () => {
         className="icofont-navigation-menu text-bronze"
         onClick={onOpen}
       ></i>
-      <DrawerMenu onClose={onClose} classes={classes} />
+      <DrawerMenu onClose={onClose} translate={translate} />
     </div>
   )
 }
