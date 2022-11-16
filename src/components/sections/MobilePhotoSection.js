@@ -4,7 +4,10 @@ import SectionContent from "./SectionContent"
 import me from "../../images/me.jpg"
 const MobilePhotoSection = () => {
   return (
-    <SectionContent anchorName="mobile-photo-section" title="Sobre mí">
+    <SectionContent
+      //  anchorName="mobile-photo-section"
+      title="Sobre mí"
+    >
       <div id="dale" className="flex w-full flex-col items-center  pb-10">
         <div
           id="photo-wrapper"

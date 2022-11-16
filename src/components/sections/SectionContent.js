@@ -15,12 +15,12 @@ const SectionContent = ({
   handleOnViewportLeave,
   viewport,
 }) => {
-  const t = () => console.log("1111111111111111111")
+  //console.log(handleOnViewportEnter)
   return (
     <motion.div
       // id={id}
-      onViewportEnter={() => handleOnViewportEnter(anchorName)}
-      onViewportLeave={() => handleOnViewportLeave(anchorName)}
+      onViewportEnter={handleOnViewportEnter}
+      onViewportLeave={handleOnViewportLeave}
       viewport={viewport}
       className={
         "relative block border-b-[1px]  border-b-bronze bg-black_3 " +

@@ -36,9 +36,7 @@ const Header = ({ buttonColor }) => {
           >
             {sectionsMap.map((section, index) => {
               const [name, hash] = section
-              console.log(
-                "------------------" + name + "****" + buttonColor[hash]
-              )
+
               return (
                 <button
                   className={"ml-3 font-bold " + buttonColor[hash]}

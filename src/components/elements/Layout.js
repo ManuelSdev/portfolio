@@ -15,8 +15,10 @@ import MobilePhotoSection from "../sections/MobilePhotoSection"
 import { motion, useAnimation, useScroll } from "framer-motion"
 
 import { sectionsMap } from "../../assets/js/tools"
+import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 const Layout = () => {
+  const { lg } = useBreakpoint()
   const hashColorObjectMap = sectionsMap.reduce((acc, element) => {
     const [sectionName, sectionHash] = element
     return { ...acc, [sectionHash]: "text-bronze" }
@@ -24,15 +26,21 @@ const Layout = () => {
 
   const [hashColors, setHashColors] = useState({ ...hashColorObjectMap })
 
-  const handleOnViewportEnter = anchorName =>
+  const handleOnViewportEnter = anchorName => {
     setHashColors({ ...hashColors, [anchorName]: "text-white" })
+  }
 
   const handleOnViewportLeave = anchorName =>
     setHashColors({ ...hashColors, [anchorName]: "text-bronze" })
 
   const viewport = { amount: "all" }
 
-  const props = { handleOnViewportEnter, handleOnViewportLeave, viewport }
+  const props = {
+    handleOnViewportEnter,
+    handleOnViewportLeave,
+    viewport,
+  }
+
   return (
     <div id="layout-wrapper" className=" scroll-smooth  bg-black_2 px-4	lg:px-0">
       <HeaderV buttonColor={hashColors} />
@@ -48,13 +56,33 @@ const Layout = () => {
       >
         <MainSection addToClass={"hidden lg:block  "} />
         <HardSkillsSection
-          anchorName="hard-skills-sections"
           addClasses="border-t-[1px] border-t-bronze"
-          {...props}
+          anchorName="hard-skills-sections"
+          handleOnViewportEnter={() =>
+            handleOnViewportEnter("hard-skills-sections")
+          }
+          handleOnViewportLeave={() =>
+            handleOnViewportLeave("hard-skills-sections")
+          }
+          viewport={{ amount: "all" }}
         />
-        <SoftSkillsSections {...props} anchorName="soft-skills-sections" />
+        <SoftSkillsSections
+          anchorName="soft-skills-sections"
+          handleOnViewportEnter={() =>
+            handleOnViewportEnter("soft-skills-sections")
+          }
+          handleOnViewportLeave={() =>
+            handleOnViewportLeave("soft-skills-sections")
+          }
+          viewport={{ amount: "all" }}
+        />
         <ProjectsSection
-          {...props}
+          handleOnViewportEnter={() =>
+            handleOnViewportEnter("projects-section")
+          }
+          handleOnViewportLeave={() =>
+            handleOnViewportLeave("projects-section")
+          }
           viewport={{ amount: 0.5 }}
           anchorName="projects-section"
         />
