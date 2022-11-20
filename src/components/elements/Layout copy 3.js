@@ -119,56 +119,60 @@ const Layout = () => {
         //   className="absolute right-24 border-r border-r-bronze bg-black"
         className="h-screen  lg:absolute lg:right-24 lg:w-[calc(50%-48px)] lg:border-r lg:border-r-bronze lg:bg-black lg:pt-20 2xl:w-[calc(55%-48px)]"
       >
-        <MainSection
-          ref={homeRef}
-          handleWheel={handleWheel(0)}
-          addToClass={"hidden lg:block  "}
-        />
+        <Name />
 
-        <HardSkillsSection
-          id={"hard-section"}
-          ref={hardRef}
-          handleWheel={handleWheel(1)}
-          addClasses="border-t-[1px] border-t-bronze"
-          anchorName="hard-skills-sections"
-          handleOnViewportEnter={() =>
-            handleOnViewportEnter("hard-skills-sections")
-          }
-          handleOnViewportLeave={() =>
-            handleOnViewportLeave("hard-skills-sections")
-          }
-          viewport={{ amount: "all" }}
-        />
-        <SoftSkillsSections
-          id={"soft-section"}
-          ref={softRef}
-          handleWheel={handleWheel(2)}
-          anchorName="soft-skills-sections"
-          handleOnViewportEnter={() =>
-            handleOnViewportEnter("soft-skills-sections")
-          }
-          handleOnViewportLeave={() =>
-            handleOnViewportLeave("soft-skills-sections")
-          }
-          viewport={{ amount: "all" }}
-        />
-        {/* <Testdos testProp={"eeeeee"} ref={scrollRef} />*/}
-        <ProjectsSection
-          id={"project-section"}
-          ref={refs.projectRef}
-          handleWheel={handleWheel(3)}
-          handleOnViewportEnter={() =>
-            handleOnViewportEnter("projects-section")
-          }
-          handleOnViewportLeave={() =>
-            handleOnViewportLeave("projects-section")
-          }
-          viewport={{ amount: 0.5 }}
-          anchorName="projects-section"
-        />
-        <Social />
+        <div className="h-full overflow-y-hidden  ">
+          <MainSection
+            ref={homeRef}
+            handleWheel={handleWheel(0)}
+            addToClass={"hidden lg:block  "}
+          />
 
-        <Footer />
+          <HardSkillsSection
+            id={"hard-section"}
+            ref={hardRef}
+            handleWheel={handleWheel(1)}
+            addClasses="border-t-[1px] border-t-bronze"
+            anchorName="hard-skills-sections"
+            handleOnViewportEnter={() =>
+              handleOnViewportEnter("hard-skills-sections")
+            }
+            handleOnViewportLeave={() =>
+              handleOnViewportLeave("hard-skills-sections")
+            }
+            viewport={{ amount: "all" }}
+          />
+          <SoftSkillsSections
+            id={"soft-section"}
+            ref={softRef}
+            handleWheel={handleWheel(2)}
+            anchorName="soft-skills-sections"
+            handleOnViewportEnter={() =>
+              handleOnViewportEnter("soft-skills-sections")
+            }
+            handleOnViewportLeave={() =>
+              handleOnViewportLeave("soft-skills-sections")
+            }
+            viewport={{ amount: "all" }}
+          />
+          {/* <Testdos testProp={"eeeeee"} ref={scrollRef} />*/}
+          <ProjectsSection
+            id={"project-section"}
+            ref={refs.projectRef}
+            handleWheel={handleWheel(3)}
+            handleOnViewportEnter={() =>
+              handleOnViewportEnter("projects-section")
+            }
+            handleOnViewportLeave={() =>
+              handleOnViewportLeave("projects-section")
+            }
+            viewport={{ amount: 0.5 }}
+            anchorName="projects-section"
+          />
+          <Social />
+
+          <Footer />
+        </div>
       </div>
 
       <Sidebar />

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { forwardRef, useState } from "react"
 import SectionContent from "./SectionContent"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -58,24 +58,25 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
     </div>
   )
 }
-const ProjectsSection = ({ ...props }) => {
+const ProjectsSection = forwardRef(({ ...props }, ref) => {
   const paragraphs = [
     "En la actualidad, estoy trabajando en el desarrollo de dos aplicaciones para las empresas Sevimatic y Conil Bikes",
   ]
   return (
     <SectionContent
       {...props}
+      ref={ref}
       title={"Proyectos"}
       // subtitle={"que puedo hacer"}
       paragraphs={paragraphs}
     >
-      <div className=" font-sans">
+      <div className=" flex overflow-scroll font-sans">
         {projectsProps.map((props, index) => (
           <ProjectInfo key={index} {...props} />
         ))}
       </div>
     </SectionContent>
   )
-}
+})
 
 export default ProjectsSection

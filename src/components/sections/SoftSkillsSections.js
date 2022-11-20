@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { forwardRef, useRef } from "react"
 import SectionContent from "./SectionContent"
 //import CompassIcon from "../../assets/svg/ruler-compass-alt.svg"
 import CompassIcon from "../../assets/svg/ruler-compass-alt.svg"
@@ -29,9 +29,9 @@ const skills = [
   [VolumeIcon, "Comunicativo"],
 ]
 
-const SoftSkillsSections = ({ ...props }) => {
+const SoftSkillsSections = forwardRef(({ ...props }, ref) => {
   return (
-    <SectionContent {...props} title={"Soft Skills"}>
+    <SectionContent {...props} ref={ref} title={"Soft Skills"}>
       <div className="grid grid-cols-3 gap-3">
         {skills.map(skill => {
           const [Icon, name] = skill
@@ -53,6 +53,6 @@ const SoftSkillsSections = ({ ...props }) => {
       </div>
     </SectionContent>
   )
-}
+})
 
 export default SoftSkillsSections

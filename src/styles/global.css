@@ -39,7 +39,9 @@
     @import "./icofont.min.css";
 
    html,body{
-        scroll-behavior: smooth;
+        scroll-behavior: unset;
+        overflow: hidden;
+        height: 100%;
     }
 
     .anchor-fix{
@@ -56,4 +58,13 @@
         height: 100%;
         background: linear-gradient(to right, #000000,1%, transparent);
       }
+
+}
+
+.ay{
+    background-color: bisque;
+}
+.ay[data=true]{
+    background-color: red;
+    width: 50%;
 }

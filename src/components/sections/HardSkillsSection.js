@@ -1,4 +1,4 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import SectionContent from "./SectionContent"
 
 import ReactIcon from "../../assets/svg/ireact.svg"
@@ -17,7 +17,7 @@ import NodeIcon from "../../assets/svg/node.svg"
 import ReduxIcon from "../../assets/svg/redux.svg"
 import MuiIcon from "../../assets/svg/mui.svg"
 
-const HardSkillsSection = ({ addClasses, ...props }) => {
+const HardSkillsSection = forwardRef(({ addClasses, ...props }, ref) => {
   const skills = [
     [JsIcon, "JavaScript"],
     [HtmlIcon, "HTML5"],
@@ -38,6 +38,7 @@ const HardSkillsSection = ({ addClasses, ...props }) => {
   return (
     <SectionContent
       {...props}
+      ref={ref}
       title={"Hard Skills"}
       addClasses={addClasses}
       // subtitle={"que puedo hacer"}
@@ -61,6 +62,6 @@ const HardSkillsSection = ({ addClasses, ...props }) => {
       </div>
     </SectionContent>
   )
-}
+})
 
 export default HardSkillsSection

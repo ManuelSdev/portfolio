@@ -1,15 +1,16 @@
-import React from "react"
+import React, { forwardRef } from "react"
 import Typing from "../elements/Typing"
 import Name from "./Name"
 
-const MainSection = ({ addToClass }) => {
+const MainSection = forwardRef(({ handleWheel, addToClass }, ref) => {
   return (
     <div
+      onWheel={handleWheel}
+      ref={ref}
       id="main-section-wrapper"
       className={
-        ` pt-4 font-sans        
-        lg:flex lg:h-screen lg:flex-col lg:justify-center   lg:py-5 ` +
-        addToClass
+        ` h-[calc(100vh_-_5rem)] pt-4        
+        font-sans lg:flex lg:flex-col lg:justify-center   lg:py-5 ` + addToClass
       }
     >
       <div className="hidden lg:block">
@@ -34,5 +35,5 @@ const MainSection = ({ addToClass }) => {
       </div>
     </div>
   )
-}
+})
 export default MainSection
