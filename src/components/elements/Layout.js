@@ -20,9 +20,10 @@ import Tes from "../header/Tes"
 import Testdos from "../header/Testdos"
 import MainSectioncopy from "../sections/MainSectioncopy"
 import Name from "../sections/Name"
+import FullPage from "./Fullpage"
 
 const Layout = () => {
-  const scrollRef = useRef(0)
+  const headerRef = useRef()
   const refs = {
     homeRef: useRef(),
     hardRef: useRef(),
@@ -30,7 +31,7 @@ const Layout = () => {
     projectRef: useRef(),
   }
   const { homeRef, hardRef, softRef, projectRef } = refs
-
+  const refsMap = [homeRef, hardRef, softRef, projectRef]
   const { scrollY } = useScroll({
     container: refs.softRef,
   })
@@ -42,15 +43,6 @@ const Layout = () => {
   }
   */
   const [a, seta] = useState(0)
-  useEffect(() => {
-    //console.log("---------------------", a.current)
-    // seta(refs.softRef.current.getBoundingClientRect().y)
-    console.log("+++++++++++++++++++++", refs.hardRef.current.offsetHeight)
-    console.log("+++++++++++++++++++++", refs.softRef.current.offsetHeight)
-    console.log("+++++++++++++++++++++", window.screen.height)
-    console.log("+++++++++++++++++++++", window.screen.availHeight)
-    // window.scrollTo(0, refs.softRef.current.getBoundingClientRect().y)
-  }, [])
 
   const hashColorObjectMap = sectionsMap.reduce((acc, element) => {
     const [sectionName, sectionHash] = element
@@ -75,8 +67,6 @@ const Layout = () => {
   }
 
   const handleWheel = refIndex => ev => {
-    const refsMap = [homeRef, hardRef, softRef, projectRef]
-
     if (ev.deltaY > 0 && refIndex >= 0 && refIndex < 3) {
       console.log("+++++++++++++++++++++++++++++++")
       refsMap[refIndex + 1].current.scrollIntoView({
@@ -105,10 +95,10 @@ const Layout = () => {
     //window.scrollBy(0, refs.hardRef.current.offsetHeight)
     //refs.hardRef.current.scrollIntoView({ block: "start", behavior: "smooth" })
   }
-
+  console.log("````````````", headerRef)
   return (
     <div id="layout-wrapper" className=" scroll-smooth  bg-black_2 px-4	lg:px-0">
-      <HeaderV refs={refs} buttonColor={hashColors} />
+      <HeaderV refs={refs} headerRef={headerRef} buttonColor={hashColors} />
       <PagePhoto />
       <div className="lg:hidden">
         <MobileHomeSection />
@@ -119,55 +109,47 @@ const Layout = () => {
         //   className="absolute right-24 border-r border-r-bronze bg-black"
         className="h-screen  lg:absolute lg:right-24 lg:w-[calc(50%-48px)] lg:border-r lg:border-r-bronze lg:bg-black lg:pt-20 2xl:w-[calc(55%-48px)]"
       >
-        <MainSection
-          ref={homeRef}
-          handleWheel={handleWheel(0)}
-          addToClass={"hidden lg:block  "}
-        />
+        <FullPage sectionRefs={refsMap} headerRef={headerRef}>
+          <MainSection addToClass={"hidden lg:block  "} />
+          <HardSkillsSection
+            id={"hard-section"}
+            addClasses="border-t-[1px] border-t-bronze"
+            anchorName="hard-skills-sections"
+            handleOnViewportEnter={() =>
+              handleOnViewportEnter("hard-skills-sections")
+            }
+            handleOnViewportLeave={() =>
+              handleOnViewportLeave("hard-skills-sections")
+            }
+            viewport={{ amount: "all" }}
+          />
 
-        <HardSkillsSection
-          id={"hard-section"}
-          ref={hardRef}
-          handleWheel={handleWheel(1)}
-          addClasses="border-t-[1px] border-t-bronze"
-          anchorName="hard-skills-sections"
-          handleOnViewportEnter={() =>
-            handleOnViewportEnter("hard-skills-sections")
-          }
-          handleOnViewportLeave={() =>
-            handleOnViewportLeave("hard-skills-sections")
-          }
-          viewport={{ amount: "all" }}
-        />
-        <SoftSkillsSections
-          id={"soft-section"}
-          ref={softRef}
-          handleWheel={handleWheel(2)}
-          anchorName="soft-skills-sections"
-          handleOnViewportEnter={() =>
-            handleOnViewportEnter("soft-skills-sections")
-          }
-          handleOnViewportLeave={() =>
-            handleOnViewportLeave("soft-skills-sections")
-          }
-          viewport={{ amount: "all" }}
-        />
-        {/* <Testdos testProp={"eeeeee"} ref={scrollRef} />*/}
-        <ProjectsSection
-          id={"project-section"}
-          ref={refs.projectRef}
-          handleWheel={handleWheel(3)}
-          handleOnViewportEnter={() =>
-            handleOnViewportEnter("projects-section")
-          }
-          handleOnViewportLeave={() =>
-            handleOnViewportLeave("projects-section")
-          }
-          viewport={{ amount: 0.5 }}
-          anchorName="projects-section"
-        />
+          <SoftSkillsSections
+            id={"soft-section"}
+            anchorName="soft-skills-sections"
+            handleOnViewportEnter={() =>
+              handleOnViewportEnter("soft-skills-sections")
+            }
+            handleOnViewportLeave={() =>
+              handleOnViewportLeave("soft-skills-sections")
+            }
+            viewport={{ amount: "all" }}
+          />
+          {/* <Testdos testProp={"eeeeee"} ref={scrollRef} />*/}
+          <ProjectsSection
+            id={"project-section"}
+            handleOnViewportEnter={() =>
+              handleOnViewportEnter("projects-section")
+            }
+            handleOnViewportLeave={() =>
+              handleOnViewportLeave("projects-section")
+            }
+            viewport={{ amount: 0.5 }}
+            anchorName="projects-section"
+          />
+        </FullPage>
+
         <Social />
-
         <Footer />
       </div>
 

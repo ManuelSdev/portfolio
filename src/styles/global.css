@@ -39,8 +39,7 @@
     @import "./icofont.min.css";
 
    html,body{
-        scroll-behavior: unset;
-        overflow: hidden;
+       
         height: 100%;
     }
 

@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { sectionsMap } from "../../assets/js/tools"
 import DrawerButton from "./DrawerButton"
 
-const Header = ({ buttonColor, refs }) => {
+const Header = ({ buttonColor, refs, headerRef }) => {
   const handleClick = hash => ev => {
     const element = document.getElementById(hash)
     element.scrollIntoView({ block: "start", behavior: "smooth" })
@@ -12,6 +12,7 @@ const Header = ({ buttonColor, refs }) => {
   //console.log("@@@@@@@@@@ refs en header", refs)
   return (
     <div
+      ref={headerRef}
       className=" fixed top-0 left-0 right-0 z-10 flex h-20 items-center bg-black px-4 py-5 shadow-md lg:border-b-bronze lg:px-5 lg:py-7 lg:shadow-bronze"
       //  variants={variants}
       //  initial="hidden"

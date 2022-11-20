@@ -29,9 +29,9 @@ const skills = [
   [VolumeIcon, "Comunicativo"],
 ]
 
-const SoftSkillsSections = forwardRef(({ ...props }, ref) => {
+const SoftSkillsSections = ({ ...props }) => {
   return (
-    <SectionContent {...props} ref={ref} title={"Soft Skills"}>
+    <SectionContent {...props} title={"Soft Skills"}>
       <div className="grid grid-cols-3 gap-3">
         {skills.map(skill => {
           const [Icon, name] = skill
@@ -53,6 +53,6 @@ const SoftSkillsSections = forwardRef(({ ...props }, ref) => {
       </div>
     </SectionContent>
   )
-})
+}
 
 export default SoftSkillsSections

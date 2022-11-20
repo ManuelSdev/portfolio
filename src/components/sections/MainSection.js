@@ -2,11 +2,9 @@ import React, { forwardRef } from "react"
 import Typing from "../elements/Typing"
 import Name from "./Name"
 
-const MainSection = forwardRef(({ handleWheel, addToClass }, ref) => {
+const MainSection = ({ handleWheel, addToClass }) => {
   return (
     <div
-      onWheel={handleWheel}
-      ref={ref}
       id="main-section-wrapper"
       className={
         ` h-[calc(100vh_-_5rem)] pt-4        
@@ -35,5 +33,5 @@ const MainSection = forwardRef(({ handleWheel, addToClass }, ref) => {
       </div>
     </div>
   )
-})
+}
 export default MainSection

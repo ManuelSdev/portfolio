@@ -14,7 +14,7 @@ const FullPageScrollFramerMotion = () => {
     d: useRef(),
     z: useRef(),
   }
-  // const { a, b, c, d, z } = refs
+  const { a, b, c, d, z } = refs
   const refsMap = [a, b, c, d]
 
   const currentMap = refsMap.map(ref => ref.current)
@@ -62,7 +62,7 @@ const FullPageScrollFramerMotion = () => {
     //  z.current.addEventListener("click", ev => console.log("first"))
     const handleWheel = ev => {
       const [lastRef] = refsMap.slice(-1)
-
+      console.log("++++++", ev)
       ev.preventDefault()
       // console.log("animationIsRunning.current", animationIsRunning.current)
       if (animationIsRunning.current) return
@@ -81,7 +81,7 @@ const FullPageScrollFramerMotion = () => {
         return
       }
     }
-    z.current.addEventListener("wheel", handleWheel)
+    z.current.addEventListener("wheel", handleWheel, true)
     return () => z.current.removeEventListener("wheel", handleWheel)
     //  setY(0)
     // if (isFirstRender.current) isFirstRender.current = false
@@ -119,10 +119,23 @@ const FullPageScrollFramerMotion = () => {
           <div
             id="a"
             ref={refs.a}
+            onClick={ev => console.log("-----------------", ev)}
             //       onWheel={handleWheel(0)}
             className="  h-screen   w-full  bg-red-200"
           >
-            AAAAAAAAAAAAA
+            <div
+              id="prueba"
+              onClick={ev => console.log("+++++++++++++++", ev.currentTarget)}
+              className="h-[700px] w-[500px] bg-slate-400"
+            >
+              holaa
+              <div
+                onClick={ev => console.log("@@@@@@@@@@@@@", ev.target)}
+                className="top-10 h-80 w-80 bg-orange-500"
+              >
+                adiossss
+              </div>
+            </div>
           </div>
           <div
             id="b"

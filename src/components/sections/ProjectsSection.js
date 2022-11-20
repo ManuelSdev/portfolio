@@ -58,14 +58,13 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
     </div>
   )
 }
-const ProjectsSection = forwardRef(({ ...props }, ref) => {
+const ProjectsSection = ({ ...props }) => {
   const paragraphs = [
     "En la actualidad, estoy trabajando en el desarrollo de dos aplicaciones para las empresas Sevimatic y Conil Bikes",
   ]
   return (
     <SectionContent
       {...props}
-      ref={ref}
       title={"Proyectos"}
       // subtitle={"que puedo hacer"}
       paragraphs={paragraphs}
@@ -77,6 +76,6 @@ const ProjectsSection = forwardRef(({ ...props }, ref) => {
       </div>
     </SectionContent>
   )
-})
+}
 
 export default ProjectsSection
