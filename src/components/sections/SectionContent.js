@@ -23,8 +23,7 @@ const SectionContent = ({
       onViewportLeave={handleOnViewportLeave}
       viewport={viewport}
       className={
-        "relative block border-b-[1px]  border-b-bronze bg-black_3 " +
-        addClasses
+        "relative block border-b-[1px]  border-b-bronze bg-black " + addClasses
       }
     >
       <div id={anchorName} className="absolute -top-20 left-0"></div>

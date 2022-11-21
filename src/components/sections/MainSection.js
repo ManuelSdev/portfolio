@@ -27,10 +27,6 @@ const MainSection = ({ addToClass }) => {
           Desarrollador web full stack especializado en JavaScript. Entusiasta
           de la programación, las matemáticas, la lectura y el deporte.
         </div>
-        <div>
-          <div>CONTACTO</div>
-          <div>BOTON</div>
-        </div>
       </div>
     </div>
   )

@@ -86,11 +86,9 @@ const Layout = () => {
           viewport={{ amount: 0.5 }}
           anchorName="projects-section"
         />
-        <Social />
+        <Sidebar />
         <Footer />
       </div>
-
-      <Sidebar />
     </div>
   )
 }
