@@ -2,9 +2,10 @@ import React from "react"
 import PagePhoto from "../elements/PagePhoto"
 import SectionContent from "./SectionContent"
 import me from "../../images/me.jpg"
-const MobilePhotoSection = () => {
+const MobilePhotoSection = ({ ...props }) => {
   return (
     <SectionContent
+      {...props}
       //  anchorName="mobile-photo-section"
       title="Sobre mí"
     >

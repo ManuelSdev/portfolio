@@ -18,7 +18,7 @@ import { sectionsMap } from "../../assets/js/tools"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 
 const Layout = () => {
-  const { lg } = useBreakpoint()
+  const [headerVisibility, setheaderVisibility] = useState("second")
   const hashColorObjectMap = sectionsMap.reduce((acc, element) => {
     const [sectionName, sectionHash] = element
     return { ...acc, [sectionHash]: "text-bronze" }

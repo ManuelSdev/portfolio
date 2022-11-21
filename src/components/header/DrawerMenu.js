@@ -37,17 +37,12 @@ const DrawerMenu = ({ onClose, translate }) => {
           translate.wrapper
         }
       >
-        <div>
+        <div className="text-sm">
           <div className="flex justify-end border-b-[1px] border-bronze fill-bronze pt-4 pb-4 pr-4">
-            <button>
-              <BackIcon
-                width="60px"
-                height="60px"
-                viewBox="0 0 1000 1000"
-                className="  "
-                onClick={handleClickOutside}
-              />
-            </button>
+            <button
+              className="icofont-close text-3xl text-bronze"
+              onClick={handleClickOutside}
+            />
           </div>
           {sectionsMap.map(section => {
             const [name, hash] = section
