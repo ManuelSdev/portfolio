@@ -1,7 +1,14 @@
 import React, { useState } from "react"
 import SectionContent from "./SectionContent"
 import { StaticImage } from "gatsby-plugin-image"
-
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { useSwiper } from "swiper/react"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/scrollbar"
+import "./styles.css"
 import gifSevimatic from "../../assets/gifs/sevi.gif"
 import { Link } from "gatsby"
 //import LinkIcon from "../../assets/svg/link.svg"
@@ -58,7 +65,10 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
     </div>
   )
 }
+
 const ProjectsSection = ({ ...props }) => {
+  //const {slideNext} = useSwiper()
+
   const paragraphs = [
     "En la actualidad, estoy trabajando en el desarrollo de dos aplicaciones para las empresas Sevimatic y Conil Bikes",
   ]
@@ -70,9 +80,24 @@ const ProjectsSection = ({ ...props }) => {
       paragraphs={paragraphs}
     >
       <div className=" font-sans">
-        {projectsProps.map((props, index) => (
-          <ProjectInfo key={index} {...props} />
-        ))}
+        <Swiper
+          cssMode={true}
+          // install Swiper modules
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          // spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          //scrollbar={{ draggable: true }}
+          onSwiper={swiper => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+        >
+          {projectsProps.map((props, index) => (
+            <SwiperSlide key={index}>
+              <ProjectInfo {...props} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </SectionContent>
   )
