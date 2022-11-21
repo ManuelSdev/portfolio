@@ -1,0 +1,19 @@
+.swiper-button-prev {
+    color: #88715B; 
+}
+
+.swiper-button-next {
+    color: #88715B; 
+}
+
+.swiper{
+    padding-left : 10% ;
+    padding-right: 10% ;
+}
+
+.swiper-pagination-bullet{
+    background-color: gainsboro; 
+}
+.swiper-pagination-bullet-active{
+    background-color: #88715B; 
+}
