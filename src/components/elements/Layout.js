@@ -42,7 +42,7 @@ const Layout = () => {
   }
 
   return (
-    <div id="layout-wrapper" className=" scroll-smooth  bg-black_2 px-4	lg:px-0">
+    <div id="layout-wrapper" className=" scroll-smooth  bg-black px-4	lg:px-0">
       <HeaderV buttonColor={hashColors} />
       <PagePhoto />
       <div className="lg:hidden">

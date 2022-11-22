@@ -3,8 +3,8 @@ import React from "react"
 const Name = () => {
   return (
     <div
-      className="  -ml-20 mt-24  rounded-l-full bg-black py-11 pl-11 font-serif text-3xl text-bronze
-    
+      className="  -ml-20 mt-24  rounded-l-full bg-black py-11 pl-11 font-serif text-3xl font-semibold
+      text-bronze
       min-[500px]:-ml-24 min-[500px]:text-4xl 
       min-[700px]:text-5xl
       

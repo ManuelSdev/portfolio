@@ -1,14 +1,18 @@
 .swiper-button-prev {
     color: #88715B; 
+    left: 0;
 }
 
 .swiper-button-next {
     color: #88715B; 
+    right: 0;
 }
 
 .swiper{
     padding-left : 10% ;
     padding-right: 10% ;
+    
+   
 }
 
 .swiper-pagination-bullet{

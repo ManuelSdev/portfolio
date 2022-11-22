@@ -10,6 +10,7 @@ import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 import "./styles.css"
 import gifSevimatic from "../../assets/gifs/sevi.gif"
+import gifConilBikes from "../../assets/gifs/conil.gif"
 import { Link } from "gatsby"
 //import LinkIcon from "../../assets/svg/link.svg"
 
@@ -25,7 +26,7 @@ const conilProjectProps = {
   title: "bike rental web app",
   description: `Aplicación web para gestionar una empresa de alquiler de bicicletas. SSR para potenciar el rendimiento SEO. `,
   link: "https://conil-bikes.vercel.app/",
-  gif: gifSevimatic,
+  gif: gifConilBikes,
   alt: "Gif demostración de la web Conil Bikes",
 }
 
@@ -39,7 +40,7 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
   return (
     <div
       id="project-wrapper"
-      className=" mb-10 flex flex-col justify-center border-[1px] border-bronze_2 bg-black p-5"
+      className=" mb-10 flex flex-col items-center justify-center rounded-xl border-[2px] border-bronze_2 bg-black_2 p-5"
     >
       <div className="pb-6">
         <div className="">
@@ -50,11 +51,12 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
           <div className=" text-justify">{description}</div>
         </div>
       </div>
+
       <a to={link}>
         <img
           // onClick={a(link)}
 
-          className="m-0 border-t-2 border-solid border-bronze  pt-8 shadow-bronze"
+          className="m-0 border-t-2 border-solid border-bronze  py-8 shadow-bronze"
           src={gif}
           alt={alt}
 
@@ -62,6 +64,12 @@ const ProjectInfo = ({ title, description, link, gif, alt }) => {
           //   className=" transition-opacity group-hover:opacity-30 group-hover:grayscale group-hover:duration-300"
         />
       </a>
+      <button
+        className="w-20 rounded bg-bronze p-2 font-semibold hover:bg-bronze_1"
+        onClick={() => window.location.assign(link)}
+      >
+        VISITAR
+      </button>
     </div>
   )
 }
@@ -70,7 +78,7 @@ const ProjectsSection = ({ ...props }) => {
   //const {slideNext} = useSwiper()
 
   const paragraphs = [
-    "En la actualidad, estoy trabajando en el desarrollo de dos aplicaciones para las empresas Sevimatic y Conil Bikes",
+    "Los proyectos mostrados a continuación se encuentran en fase de desarrollo",
   ]
   return (
     <SectionContent
@@ -93,7 +101,10 @@ const ProjectsSection = ({ ...props }) => {
           onSlideChange={() => console.log("slide change")}
         >
           {projectsProps.map((props, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide
+              key={index}
+              //  onClick={() => window.location.assign(props.link)}
+            >
               <ProjectInfo {...props} />
             </SwiperSlide>
           ))}

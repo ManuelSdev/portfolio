@@ -32,13 +32,15 @@ const SectionContent = ({
         //   style={{ paddingLeft: "8%", paddingRight: "8%" }}
       >
         <div className="">
-          <div className="pb-14 text-center font-serif text-6xl font-extrabold text-bronze xl:text-left ">
+          <div className="pb-14 text-center font-serif text-6xl font-bold text-bronze xl:text-left ">
             {title}
           </div>
-          <div className="text-lg font-semibold uppercase">{subtitle}</div>
+          <div className="text-center text-lg font-semibold uppercase">
+            {subtitle}
+          </div>
         </div>
         {paragraphs && (
-          <div className="pb-8 text-base">
+          <div className="justify-center px-2 pb-8 text-justify text-base lg:px-0">
             {paragraphs.map((elem, index) => (
               <div key={index} className="mb-7">
                 {elem}

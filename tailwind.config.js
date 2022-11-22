@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       colors: {
         bronze: "#88715B",
+        bronze_1: "#776452",
         bronze_2: "#89715b",
         black_1: "#090909",
         black_2: "#111111",

@@ -25,7 +25,7 @@ const Header = ({ buttonColor }) => {
   return (
     <motion.div
       className={
-        "fixed top-0 left-0 right-0 z-10 flex h-20  bg-black px-4 py-5 font-bold shadow-md transition-opacity lg:border-b-bronze lg:px-5 lg:py-7 lg:opacity-100 lg:shadow-bronze " +
+        "fixed top-0 left-0 right-0 z-10 flex h-20  bg-black_2 px-4 py-5 font-bold shadow-md transition-opacity lg:border-b-bronze lg:bg-black lg:px-5 lg:py-7 lg:opacity-100 lg:shadow-bronze " +
         isOnTop
       }
       //variants={variants}
@@ -45,7 +45,7 @@ const Header = ({ buttonColor }) => {
         className="flex grow flex-row justify-between text-xl text-bronze"
       >
         <div className="font-bold">Manuel Sánchez Manzanares</div>
-        <div className=" flex flex-row items-center  justify-around">
+        <div className=" flex flex-row justify-around  lg:items-center">
           <div
             id="top-menu"
             className=" hidden flex-row  justify-around lg:flex"
