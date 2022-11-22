@@ -15,10 +15,10 @@ const Sidebar = () => {
   return (
     <div
       id="sidebar-wrapper"
-      className="fixed right-0 top-0 hidden h-screen w-24 items-end justify-center bg-black lg:flex 2xl:flex"
+      className="bg-black  py-8 lg:fixed lg:right-0 lg:top-0 lg:flex lg:h-screen lg:w-24 lg:items-end lg:justify-center lg:py-0 2xl:flex"
     >
       <div
-        className="mb-8 flex flex-col justify-evenly"
+        className="flex justify-evenly lg:mb-8 lg:flex-col lg:justify-evenly"
         style={{ height: "30%" }}
       >
         <Logo

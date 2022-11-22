@@ -12,7 +12,7 @@ const MobileHomeSection = () => {
       className="flex h-screen  items-center border-b border-b-bronze bg-black pt-20 lg:hidden"
       onViewportLeave={() => console.log("ssssssssssssssssssssssssss")}
     >
-      <div className="w-full grow bg-black_2 py-11  pl-11 font-serif font-semibold ">
+      <div className="w-full grow bg-black_2 px-6  py-11 font-serif font-semibold ">
         <div className="pb-10 text-5xl text-bronze ">
           <div>Manuel</div>
           <div>Sánchez</div>
