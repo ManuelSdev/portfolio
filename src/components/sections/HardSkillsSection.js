@@ -27,13 +27,13 @@ const HardSkillsSection = ({ addClasses, ...props }) => {
     [ReactIcon, "React"],
     [ReduxIcon, "Redux"],
     [NextIcon, "Next js"],
-    [GatsbyIcon, "Gatsby"],
+    // [GatsbyIcon, "Gatsby"],
     [NodeIcon, "Node js"],
     [ExpressIcon, "Express js"],
     [MongoIcon, "MongoDB"],
     [GitIcon, "Git"],
-    [DevopsIcon, "Devops"],
-    [AgileIcon, "Agile"],
+    //  [DevopsIcon, "Devops"],
+    //   [AgileIcon, "Agile"],
   ]
   return (
     <SectionContent
@@ -42,7 +42,7 @@ const HardSkillsSection = ({ addClasses, ...props }) => {
       addClasses={addClasses}
       // subtitle={"que puedo hacer"}
     >
-      <div className="grid grid-cols-3 gap-3 2xl:grid-cols-5 ">
+      <div className="grid grid-cols-3 gap-3 2xl:grid-cols-4 ">
         {skills.map(skill => {
           const [Icon, name] = skill
           return (
